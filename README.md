@@ -1,13 +1,17 @@
 # voskhod
-This is the repository for the Transcriptome inference bioniformatics pipeline Voskhod
+This is the repository for the Transcriptome inference bioniformatics pipeline Voskhod.
+
 Voskhod allows conducting the transcriptome and gene expression analyses as presented in our paper Challenges and solutions for transcriptome assembly in non-model organisms with an application to hybrid specimens
 
 Arnaud Ungaro, Nicolas Pech, Jean-Francois Martin, Scott RJ McCairns, Remi Chappaz, Andre Gilles
+
 doi: http://dx.doi.org/10.1101/084145
 
 http://www.biorxiv.org/content/early/2016/10/28/084145
 
-1. Install needed dependencies and linux packages with administrator privileges :
+1. Voskhod has being extensively tested on Xubuntu 16.04 LTS and all instructions refere to tis setup.
+
+If using a fresh install, you will have to install dependencies and linux packages with administrator privileges :
 
 > aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3
 
