@@ -1,7 +1,11 @@
 # voskhod
-repository for the Transcriptome inference bioniformatic pipeline Voskhod
+This is the repository for the Transcriptome inference bioniformatics pipeline Voskhod
+Voskhod allows conducting the transcriptome and gene expression analyses as presented in our paper Challenges and solutions for transcriptome assembly in non-model organisms with an application to hybrid specimens
 
-Warning : never use special characters or space in the names/values/answers
+Arnaud Ungaro, Nicolas Pech, Jean-Francois Martin, Scott RJ McCairns, Remi Chappaz, Andre Gilles
+doi: http://dx.doi.org/10.1101/084145
+
+http://www.biorxiv.org/content/early/2016/10/28/084145
 
 1. Install needed dependencies and linux packages with administrator privileges :
 
@@ -18,6 +22,8 @@ Warning : never use special characters or space in the names/values/answers
 > pip install biomart
 
 > pip install bashplotlib
+
+> git clone https://github.com/egeeamu/voskhod
 
 The firts time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task. In the voskhod folder type:
 
