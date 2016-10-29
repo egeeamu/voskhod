@@ -13,13 +13,11 @@ Voskhod has being extensively tested on Xubuntu 16.04 LTS and all instructions r
 
 If using a fresh install, you will have to install dependencies and linux packages with administrator privileges :
 
-> aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3
-
-> aptitude install software-properties-common
+> aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3 software-properties-common
 
 > add-apt-repository ppa:webupd8team/java
 
-> apt-get update
+> aptitude update
 
 > aptitude insta ll oracle-java8-installer
 
@@ -29,7 +27,7 @@ If using a fresh install, you will have to install dependencies and linux packag
 
 > git clone https://github.com/egeeamu/voskhod
 
-The first time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task. In the voskhod folder type:
+The first time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task automatically. In the voskhod folder type:
 
 > chmod +x *.sh
 
@@ -45,11 +43,11 @@ From https://github.com/egeeamu/voskhod/blob/master/dataset_ensembl.txt select E
 
 2- Filter raw input data (uncompressed fastq files) before denovo assembly.
 If you have multiple R1 and R2 files, concatenate them into one "big" R1 & one "big" R2.  (e.g. cat *R1* > bigR1.fastq)
-The files must be in "./raw_input/assembly"
+The input files must be in "./raw_input/assembly"
 
 > ./02_filtering_raw_data_denovo.sh
 
-this will generate input files filtered for quality in ./cleaned_input/assembly
+this will generate input files filtered for quality in ./cleaned_input/assembly (synchronized R1 and R2 files when Paired-End sequencing is selected)
 
 3- Launch Denovo Trinity assembly (selecting the correct value when requested):
 -Cores to use : the number of core on your computer available for the analysis
@@ -64,16 +62,16 @@ The assembly to validate must be in ./assembly/raw in fastq format. This is prec
 
 > ./validate_annotate_assembly.sh
 
-If you have multiple sources for transcriptomes, repeat steps 2 , 3 & 4 for all your sources before continue.
+If you have multiple sources for transcriptomes, repeat steps 2 , 3 & 4 for all your sources before continue then merge all denovo assemblys and reference transcriptomes :
+Copy your validated denovo assemblies (from ./assembly/validated)  and your reference trascriptome (from ./reference_ts) in ./assembly/tomerge
+caution : put only the transcriptome(s) you want merge into ./assembly/tomerge as the whole content of the folder will be used in merging step.
 
-5. Merge all de novo assemblys and reference cdna :
-Copy your validated Trinity's assemblys (from ./assembly/validated)  and your reference cdna (from ./reference_ts) in ./assembly/tomerge
-caution : put only the cdna(s) you want merge into ./assembly/tomerge
+> ./merge_transcriptomes.sh
 
-> ./XX_merge_cdna.sh
+the output will be stored in ./reference_ts
 
-the result will be in ./reference_ts
-	
+
+
 Now we can identify reads using ref species and de novo assembly.
 
 
