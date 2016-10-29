@@ -9,7 +9,7 @@ doi: http://dx.doi.org/10.1101/084145
 
 http://www.biorxiv.org/content/early/2016/10/28/084145
 
-1. Voskhod has being extensively tested on Xubuntu 16.04 LTS and all instructions refere to tis setup.
+1. Voskhod has being extensively tested on Xubuntu 16.04 LTS and all instructions refer to this setup.
 
 If using a fresh install, you will have to install dependencies and linux packages with administrator privileges :
 
@@ -29,7 +29,7 @@ If using a fresh install, you will have to install dependencies and linux packag
 
 > git clone https://github.com/egeeamu/voskhod
 
-The firts time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task. In the voskhod folder type:
+The first time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task. In the voskhod folder type:
 
 > chmod +x *.sh
 
@@ -39,7 +39,7 @@ Once this step is done you are ready to use Voskhod!
 
 2. Download the reference species.
 
-From https://github.com/egeeamu/voskhod/blob/master/dataset_ensembl.txt select Ensembl Genes 86 dataset name for your prefered  reference species (e.g. drerio_gene_ensembl in the case of Danio rerio) and edit the 01_cdna_downloader.py script with the correct dataset name for your reference transcriptome. One you execute the python script, the reference trancriptome will be downloaded and formated in ./reference_ts (with the correct sqlite format as a db file):
+From https://github.com/egeeamu/voskhod/blob/master/dataset_ensembl.txt select Ensembl Genes 86 dataset name for your prefered  reference species (e.g. drerio_gene_ensembl in the case of Danio rerio) and edit the 01_cdna_downloader.py script with the correct dataset name for your reference transcriptome. Once you execute the python script (see below), the reference trancriptome will be downloaded and formated in ./reference_ts (with the correct sqlite format as a db file):
 
 > python 01_cdna_downloader.py
 
