@@ -4,6 +4,7 @@ repository for the Transcriptome inference bioniformatic pipeline Voskhod
 Warning : never use special characters or space in the names/values/answers
 
 1. Install needed dependencies and linux packages with administrator privileges :
+
 > aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3
 
 > aptitude install software-properties-common
@@ -18,9 +19,10 @@ Warning : never use special characters or space in the names/values/answers
 
 > pip install bashplotlib
 
-The firts time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task:
+The firts time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task. In the voskhod folder type:
 
 > chmod +x *.sh
+
 > ./00_prepare_voskhod.sh
 
 Once this step is done you are ready to use Voskhod!
