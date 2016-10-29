@@ -10,12 +10,19 @@ If test with real data : use "real_data.sh" scripts
 
 
 Install needed tools with root user :
-> aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3
-> add-apt-repository ppa:webupd8team/java
-> apt-get update
-> apt-get install oracle-java8-installer
-> pip install biomart
-> pip install bashplotlib
+aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3
+
+aptitude install software-properties-common
+
+add-apt-repository ppa:webupd8team/java
+
+apt-get update
+
+aptitude install oracle-java8-installer
+
+pip install biomart
+
+pip install bashplotlib
 
 once  : 1. Prepare the pipeline directory:
 (compil trinity & unpack blast)
