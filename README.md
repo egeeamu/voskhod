@@ -2,42 +2,34 @@
 repository for the Transcriptome inference bioniformatic pipeline Voskhod
 
 Warning : never use special characters or space in the names/values/answers
-When asked "Please select Reference species" please select ensembl species !!
 
-Warning : 
-If test with sim data : use "sim_data.sh" scripts
-If test with real data : use "real_data.sh" scripts
+1. Install needed dependencies and linux packages with administrator privileges :
+> aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3
 
+> aptitude install software-properties-common
 
-Install needed tools with root user :
-aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3
+> add-apt-repository ppa:webupd8team/java
 
-aptitude install software-properties-common
+> apt-get update
 
-add-apt-repository ppa:webupd8team/java
+> aptitude install oracle-java8-installer
 
-apt-get update
+> pip install biomart
 
-aptitude install oracle-java8-installer
+> pip install bashplotlib
 
-pip install biomart
-
-pip install bashplotlib
-
-once  : 1. Prepare the pipeline directory:
-(compil trinity & unpack blast)
+The firts time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task:
 
 > chmod +x *.sh
-> ./00_unpack_blast_make_trinity.sh
+> ./00_prepare_voskhod.sh
 
+Once this step is done you are ready to use Voskhod!
 
 2. Download the reference species.
-go to http://www.ensembl.org/biomart/    and select Ensemble Genes 86 then your reference species in the dropdown list then select the show query as perl script and get the data file name in the setdataset variable (drerio_gene_ensembl in the case of Danio rerio)
 
-Put in the script the correct value for the species
-The reference cdna will be in ./reference_ts (with the correct sqlite format as a db file)
-launch the script 
-> python 00_lunokod_cdna_downloader.py
+From https://github.com/egeeamu/voskhod/blob/master/dataset_ensembl.txt select Ensembl Genes 86 dataset name for your prefered  reference species (e.g. drerio_gene_ensembl in the case of Danio rerio) and edit the 01_cdna_downloader.py script with the correct dataset name for your reference transcriptome. One you execute the python script, the reference trancriptome will be downloaded and formated in ./reference_ts (with the correct sqlite format as a db file):
+
+> python 01_cdna_downloader.py
 
 2. Clean and sync the R1 and R2 (fastq files) you want assembly with trinity.
 If you have manys R1 and R2 files, concatenate them into one "big" R1 & one "big" R2.  (ex cat *R1* > bigR1.fastq)
