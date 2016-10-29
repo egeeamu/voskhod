@@ -1,4 +1,4 @@
-This list was updated Oct-29-2016. Use the dataset name to edit the cdna_downloader.py file. Executing this script will prepare a reference transcriptome in the reference_ts folder.
+This list was updated Oct-29-2016. Use the dataset name to edit the cdna_downloader.py file. Executing cdna_downloader.py will prepare a reference transcriptome in the reference_ts folder.
 
                           dataset                                description           version
 1          oanatinus_gene_ensembl     Ornithorhynchus anatinus genes (OANA5)             OANA5
