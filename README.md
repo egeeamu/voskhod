@@ -9,7 +9,7 @@ doi: http://dx.doi.org/10.1101/084145
 
 http://www.biorxiv.org/content/early/2016/10/28/084145
 
-0. Voskhod has being extensively tested on Xubuntu 16.04 LTS and all instructions refer to this setup.
+Voskhod has being extensively tested on Xubuntu 16.04 LTS and all instructions refer to this setup.
 
 If using a fresh install, you will have to install dependencies and linux packages with administrator privileges :
 
