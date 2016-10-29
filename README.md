@@ -9,7 +9,7 @@ doi: http://dx.doi.org/10.1101/084145
 
 http://www.biorxiv.org/content/early/2016/10/28/084145
 
-1. Voskhod has being extensively tested on Xubuntu 16.04 LTS and all instructions refer to this setup.
+0. Voskhod has being extensively tested on Xubuntu 16.04 LTS and all instructions refer to this setup.
 
 If using a fresh install, you will have to install dependencies and linux packages with administrator privileges :
 
@@ -37,27 +37,25 @@ The first time you use the pipeline you have to download associated tools and co
 
 Once this step is done you are ready to use Voskhod!
 
-2. Download the reference species.
+1. Download the reference species.
 
 From https://github.com/egeeamu/voskhod/blob/master/dataset_ensembl.txt select Ensembl Genes 86 dataset name for your prefered  reference species (e.g. drerio_gene_ensembl in the case of Danio rerio) and edit the 01_cdna_downloader.py script with the correct dataset name for your reference transcriptome. Once you execute the python script (see below), the reference trancriptome will be downloaded and formated in ./reference_ts (with the correct sqlite format as a db file):
 
 > python 01_cdna_downloader.py
 
-2. Clean and sync the R1 and R2 (fastq files) you want assembly with trinity.
-If you have manys R1 and R2 files, concatenate them into one "big" R1 & one "big" R2.  (ex cat *R1* > bigR1.fastq)
+2. Filter raw input data (uncompressed fastq files) before denovo assembly.
+If you have multiple R1 and R2 files, concatenate them into one "big" R1 & one "big" R2.  (e.g. cat *R1* > bigR1.fastq)
 The files must be in "./raw_input/assembly"
 
-> ./01_01_cleaning_and_sync_R1_R2.sh
+> ./02_filtering_raw_data_denovo.sh
 
-this will generate cleande files in ./cleaned_input/assembly
+this will generate input files filtered for quality in ./cleaned_input/assembly
 
-3. Lunch Trinity assembly (selecting the correct value while asking):
--Cores to use : the number of core on your computer (type 8 if you dont know)
+3. Launch Denovo Trinity assembly (selecting the correct value when requested):
+-Cores to use : the number of core on your computer available for the analysis
 -Ram to use : total ram on your computer minus 2 (ex 16Gb - 2 > 14GB)
--Nice : the priority of the process with 19 the lower and 0 the maximum
 
-> ./01_trinity_02_assembling_R1_R2_de_novo.sh
-
+> ./03_denovo_assembly.sh
 
 
 4. Validate and anotate the assembly:
