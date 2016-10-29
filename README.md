@@ -21,7 +21,7 @@ If using a fresh install, you will have to install dependencies and linux packag
 
 > apt-get update
 
-> aptitude install oracle-java8-installer
+> aptitude insta ll oracle-java8-installer
 
 > pip install biomart
 
@@ -37,13 +37,13 @@ The first time you use the pipeline you have to download associated tools and co
 
 Once this step is done you are ready to use Voskhod!
 
-1. Download the reference species.
+1- Download the reference species.
 
 From https://github.com/egeeamu/voskhod/blob/master/dataset_ensembl.txt select Ensembl Genes 86 dataset name for your prefered  reference species (e.g. drerio_gene_ensembl in the case of Danio rerio) and edit the 01_cdna_downloader.py script with the correct dataset name for your reference transcriptome. Once you execute the python script (see below), the reference trancriptome will be downloaded and formated in ./reference_ts (with the correct sqlite format as a db file):
 
 > python 01_cdna_downloader.py
 
-2. Filter raw input data (uncompressed fastq files) before denovo assembly.
+2- Filter raw input data (uncompressed fastq files) before denovo assembly.
 If you have multiple R1 and R2 files, concatenate them into one "big" R1 & one "big" R2.  (e.g. cat *R1* > bigR1.fastq)
 The files must be in "./raw_input/assembly"
 
@@ -51,23 +51,20 @@ The files must be in "./raw_input/assembly"
 
 this will generate input files filtered for quality in ./cleaned_input/assembly
 
-3. Launch Denovo Trinity assembly (selecting the correct value when requested):
+3- Launch Denovo Trinity assembly (selecting the correct value when requested):
 -Cores to use : the number of core on your computer available for the analysis
 -Ram to use : total ram on your computer minus 2 (ex 16Gb - 2 > 14GB)
 
 > ./03_denovo_assembly.sh
 
 
-4. Validate and anotate the assembly:
+4- Validate and annotate the assembly:
 
-The assembly to validate must be in ./assembly/raw in fastq format.
-The validated assembly will be in ./assembly/validated in sqlite format.
+The assembly to validate must be in ./assembly/raw in fastq format. This is precisely where the 03_denovo_assembly.sh script writes its output. The validated and annotated assembly will be written in ./assembly/validated in sqlite format.
 
-> ./99_voskhod_validate_assembly_.sh
-sortie dans assembly/validated
+> ./validate_annotate_assembly.sh
 
-
-Do steps 2 , 3 & 4 for all your species before continue.
+If you have multiple sources for transcriptomes, repeat steps 2 , 3 & 4 for all your sources before continue.
 
 5. Merge all de novo assemblys and reference cdna :
 Copy your validated Trinity's assemblys (from ./assembly/validated)  and your reference cdna (from ./reference_ts) in ./assembly/tomerge
