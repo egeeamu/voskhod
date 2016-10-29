@@ -1,2 +1,2 @@
 Here is the place for the reference transcriptome(s) used in DGM pipeline. This can be automatically filled by the cdna_downloader.py script.
-The Ensembl dataset list to use for editing the script for your preferred Refernce is regularly updated at https://github.com/egeeamu/voskhod/dataset_ensembl.txt
+The Ensembl dataset names list to use for editing the script for using your preferred Reference transcriptome is regularly updated at https://github.com/egeeamu/voskhod/dataset_ensembl.txt
