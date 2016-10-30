@@ -69,7 +69,9 @@ If you have multiple sources for transcriptomes, repeat steps 2 , 3 & 4 for all 
 If you only want denovo assemblies, you are good to go and can explore the results with any database browser as DB Browser for SQLite (http://sqlitebrowser.org/). 
 If you want to use the combined Denovo + DGM approach as described in the paper, you have to merge the reconstructed denovo transcriptome(s) with the reference transcriptome before running the DGM step on the combined refrence.
 To merge  denovo assembly(ies) and reference transcriptome :
+
 Copy your validated denovo assembly(ies) (from ./assembly/validated)  and your reference trascriptome (from ./reference_ts) in ./assembly/tomerge
+
 caution : put only the transcriptome(s) you want merged into ./assembly/tomerge as the whole content of the folder will be used in merging step.
 
 > ./merge_transcriptomes.sh
