@@ -1,6 +1,7 @@
 #!/bin/bash
 # Bash Menu Script Example
 
+
 set -e
 mkdir -p logs
 mkdir -p ./cleaned_input
