@@ -108,7 +108,8 @@ The script writes its output in ./assembly/raw/voskhod/. The next validation ste
 
 
 8- Validate and anotate the assembly (like step 4):
-When asked, select the assembly from the corresponding fastq file found at ./assembly/raw
+When asked, select the assembly from the corresponding fastq file found at ./assembly/raw. The reference teanscriptome required in this step is the reference species from Ensembl to avoid circularity with the denovo inference.
+
 
 > ./08_voskhod_validate_assembly_.sh
 
