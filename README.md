@@ -63,7 +63,7 @@ this will generate input files filtered for quality in ./cleaned_input/assembly 
 
 The assembly to validate must be in ./assembly/raw in fastq format. This is precisely where the 03_denovo_assembly.sh script writes its output. The validated and annotated assembly will be written in ./assembly/validated in sqlite format.
 
-> ./validate_annotate_assembly.sh
+> ./04_validate_annotate_assembly.sh
 
 If you have multiple sources for transcriptomes, repeat steps 2 , 3 & 4 for all your sources before continue.
 If you only want denovo assemblies, you are good to go and can explore the results with any database browser as DB Browser for SQLite (http://sqlitebrowser.org/). 
@@ -74,12 +74,12 @@ Copy your validated denovo assembly(ies) (from ./assembly/validated)  and your r
 
 caution : put only the transcriptome(s) you want merged into ./assembly/tomerge as the whole content of the folder will be used in merging step.
 
-> ./merge_transcriptomes.sh
+> ./05_merge_transcriptomes.sh
 
 the output will be stored in ./reference_ts
 
 
-Now we can identify reads using the comination of reference transcriptome species and the denovo assembly.
+Now we can identify reads using the combination of reference transcriptome species and the denovo assembly.
 
 
 5. Merge (with Pear) and cleaning R1 & R2 before Voskhod assembly:
