@@ -129,16 +129,16 @@ It is usually a better idea to merge fastq files from multiples sources rather t
 
 For expression analysis, we postulate that your reference transcriptome(s) is/are obtained and correctly formatted in a sqlite database.
 
-Clean & merge all your R1/R2 for expression :
+e1- filter on quality & merge paired end reads if relevant:
 The inputs files must be in "./raw_input/expression", the result will be in "./cleaned_input/expression/" 
-Caution, the names must countain "_R1_"/"_R2_"
+Caution, the file names must countain "_R1_" & "_R2_"
 
 > ./e01_filtering_raw_data_expression.sh
 
-10. Expression step (blast) :
-When asked, select the merged cdna (step 8)
+e2- Computing Expression (blast) :
+When requested, select the relevant reference transcriptome (usually the transcriptome from step 8 or 9 in the assembly section).
 
-> ./03_02_voskhod_expression.sh
+> ./e02_expression_analysis.sh
 
-The output will be in ./expression_results/xxx/  in csv and sqlite format.
-(with xxx the name of the study)
+The output will be in ./expression_results/STUDYNAME/  in csv and sqlite format.
+(with STUDYNAME being the name of the study file)
