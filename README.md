@@ -133,7 +133,7 @@ Clean & merge all your R1/R2 for expression :
 The inputs files must be in "./raw_input/expression", the result will be in "./cleaned_input/expression/" 
 Caution, the names must countain "_R1_"/"_R2_"
 
-> ./03_01_pear_and_clean_many_R1_R1_expression.sh
+> ./e01_filtering_raw_data_expression.sh
 
 10. Expression step (blast) :
 When asked, select the merged cdna (step 8)
