@@ -66,11 +66,11 @@ this will generate output files filtered for quality in ./cleaned_input/assembly
 
 > ./03_denovo_assembly.sh
 
-this will generate output files ./assembly/raw/
+this will generate output files ./assembly/raw/trinity/
 
 4- Validate and annotate the assembly:
 
-The assembly to validate must be in ./assembly/raw in fastq format. The validated and annotated assembly will be written in ./assembly/validated in sqlite format.
+The assembly to validate must be in ./assembly/raw/trinity/ in fastq format. The validated and annotated assembly will be written in ./assembly/validated in sqlite format.
 
 > ./04_validate_annotate_assembly.sh
 
