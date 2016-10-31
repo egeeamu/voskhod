@@ -130,8 +130,8 @@ It is usually a better idea to merge fastq files from multiples sources rather t
 For expression analysis, we postulate that your reference transcriptome(s) is/are obtained and correctly formatted in a sqlite database.
 
 e1- filter on quality & merge paired end reads if relevant:
-The inputs files must be in "./raw_input/expression", the result will be in "./cleaned_input/expression/" 
-Caution, the file names must countain "_R1_" & "_R2_"
+The input files must be in "./raw_input/expression", the result will be in "./cleaned_input/expression/" 
+Caution, the file names must countain _R1_ & \_R2_
 
 > ./e01_filtering_raw_data_expression.sh
 
