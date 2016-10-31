@@ -67,6 +67,8 @@ The assembly to validate must be in ./assembly/raw in fastq format. This is prec
 
 If you have multiple sources for transcriptomes, repeat steps 2 , 3 & 4 for all your sources before continue.
 If you only want denovo assemblies, you are good to go and can explore the results with any database browser as DB Browser for SQLite (http://sqlitebrowser.org/). 
+
+5- Merging transcriptomes for further combined approach
 If you want to use the combined Denovo + DGM approach as described in the paper, you have to merge the reconstructed denovo transcriptome(s) with the reference transcriptome before running the DGM step on the combined refrence.
 To merge  denovo assembly(ies) and reference transcriptome :
 
@@ -76,23 +78,22 @@ caution : put only the transcriptome(s) you want merged into ./assembly/tomerge 
 
 > ./05_merge_transcriptomes.sh
 
-the output will be stored in ./reference_ts
-
+the combined output will be stored in ./reference_ts
 
 Now we can identify reads using the combination of reference transcriptome species and the denovo assembly.
 
 
-5. Merge (with Pear) and cleaning R1 & R2 before Voskhod assembly:
-Using the same files as step 2.
+6- Prepare reads for Voskhod assembly:
+Using the same raw input fastq files as step 2, filter reads for quality and optionally merge paired-end reads if relevant.
 
-> ./02_01_pear_and_clean_R1_R2.sh
+> ./06_prepare_voskhod.sh
 
-6. Identify (blast) and make Voskhod assembly:
-When asked, select your merged cdna (all species + ref), and the merged fastq file of your species.
-attention donner le ficier correspondant à la sequece de reference, pas le mergé
-> ./02_02_voskhod_matching_and_assembling.sh 
+7- Identify (blast) and make Voskhod assembly:
+When requested, select your merged transcriptomes (all species + ref), and thefiltered fastq file for your source to be inferred.
 
-7. Validate and anotate the assembly (like step 4):
+> ./07_voskhod_matching_and_assembling.sh 
+
+8- Validate and anotate the assembly (like step 4):
 When asked, select the assembly in the list.
 
 > ./99_voskhod_validate_assembly_.sh
