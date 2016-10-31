@@ -92,9 +92,11 @@ Using the same raw input fastq files as step 2, filter reads for quality and opt
 When requested, select your merged transcriptomes (all species + ref), and thefiltered fastq file for your source to be inferred.
 
 > ./07_voskhod_matching_and_assembling.sh 
+The scripts writes its output to ./assembly/raw/voskhod. The next validation steps requires that you move the produced fastq file to ./assembly/raw before processing.
+
 
 8- Validate and anotate the assembly (like step 4):
-When asked, select the assembly in the list.
+When asked, select the assembly from the corresponding fastq file found at ./assembly/raw
 
 > ./99_voskhod_validate_assembly_.sh
 
