@@ -40,6 +40,9 @@ The first time you use the pipeline you have to download associated tools and co
 
 Once this step is done you are ready to use Voskhod!
 
+#Transcriptome assembly
+
+
 1- Download and format the reference transcriptome from Ensembl.
 
 From https://github.com/egeeamu/voskhod/blob/master/dataset_ensembl.txt select the Ensembl Genes 86 dataset name for your prefered  reference species (e.g. drerio_gene_ensembl in the case of Danio rerio) and edit the 01_cdna_downloader.py script with the correct dataset name for your reference transcriptome. Once you execute the python script (see below), the reference trancriptome will be downloaded and formated in ./reference_ts (with the correct sqlite format as a db file):
@@ -120,9 +123,9 @@ caution : put only the transcriptome(s) you want merged into ./assembly/tomerge
 The assembly is done and you can explore the results with any database browser as DB Browser for SQLite (http://sqlitebrowser.org/). 
 It is usually a better idea to merge fastq files from multiples sources rather than merging the inferred transcriptomes as you get more coverage during the analyses. This although means you loose track of the source during the process. Merging transcriptomes in a single database allows identifying the transcript source.
 
-For expression analysis, we postumate that your reference transcriptome(s) is/are obtained and correctly formatted in a sqlite database.
+For expression analysis, we postulate that your reference transcriptome(s) is/are obtained and correctly formatted in a sqlite database.
 
-9. Clean & merge all your R1/R2 for expression :
+Clean & merge all your R1/R2 for expression :
 The inputs files must be in "./raw_input/expression", the result will be in "./cleaned_input/expression/" 
 Caution, the names must countain "_R1_"/"_R2_"
 
