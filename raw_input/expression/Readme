@@ -1,1 +1,1 @@
-place here your fastq files for RNAseq expression analyses
+place here your fastq files for RNAseq expression analyses. Be careful, the file names must contain "_R1_" & "_R2_" for paired end data. 
