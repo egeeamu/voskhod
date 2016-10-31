@@ -9,7 +9,7 @@ doi: http://dx.doi.org/10.1101/084145
 
 http://www.biorxiv.org/content/early/2016/10/28/084145
 
-{Installation
+#Installation
 
 Voskhod has being extensively tested (in particular with paired end data) on Xubuntu 16.04 LTS and all instructions refer to this setup.
 It surely works on other flavours of Linux OS but we will not be able to provide technical support on this kind of questions.
@@ -124,6 +124,8 @@ caution : put only the transcriptome(s) you want merged into ./assembly/tomerge
 
 The assembly is done and you can explore the results with any database browser as DB Browser for SQLite (http://sqlitebrowser.org/). 
 It is usually a better idea to merge fastq files from multiples sources rather than merging the inferred transcriptomes as you get more coverage during the analyses. This although means you loose track of the source during the process. Merging transcriptomes in a single database allows identifying the transcript source.
+
+#RNAseq Expression
 
 For expression analysis, we postulate that your reference transcriptome(s) is/are obtained and correctly formatted in a sqlite database.
 
