@@ -13,8 +13,9 @@ Version 20160920
 ¤ Voskhod CDNA merger
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
 
 Input must be in ./assembly/tomerge in sqlite file format.
 Output will be in ./reference_ts in sqlite file format.
@@ -24,7 +25,7 @@ EndOfMessage
 
 echo ""
 
-read -n1 -r -p "Place all XX_cdna_infos.db you want merge in ./assembly/tomerge Press 'C' to continue..." key
+read -n1 -r -p "Place all XX_cdna_infos.db you want merged in ./assembly/tomerge Press 'C' to continue..." key
 
 echo ""
 
