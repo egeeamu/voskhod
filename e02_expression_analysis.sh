@@ -14,8 +14,10 @@ Version 20160920
 ¤ Voskhod Expression
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 
 Input must be in ./cleaned_input/expression in fastq file format.
 Output will be in ./expression_results/ in sqlite and csv format.
@@ -132,7 +134,7 @@ refspecies="${NAMES[-1]}"
 
 python ./voskload_preload_database_validate_contigs.py
 echo ""
-echo "Work in progress, may take long time, do not exit.."
+echo "Work in progress, this may take a long time, do not exit.."
 echo ""
 time parallel --ungroup --gnu --progress --max-procs 1 'time python voskhod_expression.py {}' ::: ../../cleaned_input/expression/*.f*q
 time parallel --ungroup --gnu --progress --max-procs 1 "time python voskhits_mth_share_expression.py -r '$refspecies' -i {}" ::: ./results/*.db
