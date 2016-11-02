@@ -13,8 +13,10 @@ Version 20160920
 ¤ Voskhod validator
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 
 Input must be in ./assembly/raw in fasta file format.
 Output will be in ./assembly/validated in sqlite file format.
@@ -48,7 +50,7 @@ done
 echo ""
 echo ""
 
-prompt="Please select transcriptom to validate:"
+prompt="Please select transcriptome to validate:"
 options=( $(find ./assembly/raw/ -maxdepth 2 -type f -iregex '.*\.\(fq\|fastq\)$' -print0 | xargs -0) )
 
 PS3="$prompt "
