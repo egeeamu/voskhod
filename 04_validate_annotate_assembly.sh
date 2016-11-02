@@ -50,7 +50,7 @@ done
 echo ""
 echo ""
 
-prompt="Please select transcriptom to validate:"
+prompt="Please select transcriptome to validate:"
 options=( $(find ./assembly/raw/ -maxdepth 2 -type f -iregex '.*\.\(fq\|fastq\)$' -print0 | xargs -0) )
 
 PS3="$prompt "
