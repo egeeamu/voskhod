@@ -13,11 +13,13 @@ Version 20160920
 ¤ Voskhod assembler
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 
 Input must be in ./cleaned_input/assembly
-Output will be in ./assembly/raw
+Output will be in ./assembly/raw/voskhod
 
 Type the name assembled species (without space ex: drer_vosk), followed by [ENTER]:
 EndOfMessage
@@ -26,7 +28,7 @@ read name
 echo ""
 echo ""
 
-prompt="Please select cdna_infos.db (will be the blast database) (should be merged trinity(s) and MUST countain ref species!!)"
+prompt="Please select cdna_infos.db (will be the blast database, should be merged trinity(s) and MUST countain ref species!!)"
 options=( $(find ./reference_ts -maxdepth 1 -type f -iregex '.*\.\(db\|db\)$' -print0 | xargs -0) )
 
 PS3="$prompt "
