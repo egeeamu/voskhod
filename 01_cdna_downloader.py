@@ -58,8 +58,10 @@ Version 20160911
 Automatic cdna_downloader & formater
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr"
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 """
 
 print "Connecting to " + dbinput + ".."
