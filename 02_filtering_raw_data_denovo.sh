@@ -20,19 +20,21 @@ Version 20160920
 ¤ Cleaner
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 
 ¤ Option 1 :
-  You have single end library with only one fastq file
-  This step will clean this file
+  You have a single end library with only one fastq file
+  This step will filter this file based on the quality and length
 
 ¤ Option 2 :
-  You have paired end library with R1 & R2 fastq files
-  This step will clean the files then sync R1 and R2 into two cleaned and sync fastq files
+  You have a paired end library with R1 & R2 fastq files
+  This step will filter the files then sync R1 and R2 into two filtered and synchronyzed fastq files
 
 The input file(s) must be in ./raw_input/assembly and in fastq format.
-The cleaned files will be in ./cleaned_input/assembly in fastq format.
+The filtered files will be in ./cleaned_input/assembly in fastq format.
 
 EndOfMessage
 PS3='Please enter your choice: '
@@ -84,14 +86,14 @@ rm -rf ./cleantrinityR1.fq
 
 
 echo ""
-echo "Cleaning in progress ..."
+echo "Filtering in progress ..."
 echo ""
 
 time parallel --gnu --progress --max-procs 2 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: "$R1"
 #time parallel --gnu --progress --max-procs 8 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: ./*.fastq
 
 echo ""
-echo "Cleaning done"
+echo "Filtering done"
 echo ""
 
 rm -rf ../../cleaned_input/assembly/"$R1"_cleaned_SE_sync.fastq
@@ -110,7 +112,7 @@ if [ "$argu" = "2" ]; then
 echo ""
 echo ""
 
-prompt="Please select R1 file (caution, files may be in wrong order in the list):"
+prompt="Please select R1 file (caution, files may be in any order in the list):"
 options=( $(find ./ -maxdepth 1 -type f -iregex '.*\.\(fastq\|fq\)$' -print0 | xargs -0) )
 
 PS3="$prompt "
@@ -126,7 +128,7 @@ select R1 in "${options[@]}" "Quit" ; do
         echo "Invalid option. Try another one."
     fi
 done    
-prompt="Please select R2 file (caution, files may be in wrong order in the list):"
+prompt="Please select R2 file (caution, files may be in any order in the list):"
 options=( $(find ./ -maxdepth 1 -type f -iregex '.*\.\(fastq\|fq\)$' -print0 | xargs -0) )
 
 PS3="$prompt "
@@ -149,14 +151,14 @@ rm -rf ./cleantrinityR1.fq
 rm -rf ./cleantrinityR2.fq
 
 echo ""
-echo "Cleaning in progress ..."
+echo "Filtering in progress ..."
 echo ""
 
 time parallel --gnu --progress --max-procs 2 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: "$R1" "$R2"
 #time parallel --gnu --progress --max-procs 8 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: ./*.fastq
 
 echo ""
-echo "Cleaning done, syncing in progress ..."
+echo "Filtering done, syncing in progress ..."
 echo ""
 
 python afterclean_remove_bad_pw.py -f "$R1"_query.fq -r "$R2"_query.fq | tee ../../logs/logs_syncs_R1_R2.txt
