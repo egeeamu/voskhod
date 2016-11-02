@@ -16,8 +16,8 @@ Version 20160920
 ¤ Preloader and downloader
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
 
 This script will download and unpack: Spades 3.6.2 ,Blast+ 2.4.0, Pear 0.9.10 and Trinity v2.2.0 & compile Trinity
 Unpack Cap3 v02/10/15 x64
@@ -25,9 +25,9 @@ Unpack Cap3 v02/10/15 x64
 Before continue, make sure you have on your system :
 
 build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3
-java jre (at least 8) and install with pip this  : biomart & bashplotlib
+java jre (at least 8) and install the following packages with pip  : biomart & bashplotlib
 
-The pipeline is tested on a fresh Debian 7 x64 and fresh Ubuntu 14.04 x64
+The pipeline is tested on a fresh Debian 7 x64 and fresh Ubuntu 16.04 LTS x64
 
 
 EndOfMessage
