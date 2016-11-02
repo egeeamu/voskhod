@@ -13,8 +13,10 @@ Version 20160920
 ¤ Voskhod CDNA merger
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 
 Input must be in ./assembly/tomerge in sqlite file format.
 Output will be in ./reference_ts in sqlite file format.
