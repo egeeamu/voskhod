@@ -14,8 +14,10 @@ Version 20160919
 ¤ Cleaner & merger expression
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 
 
 ¤ Option 1)
@@ -23,7 +25,7 @@ contact@arnaud-ungaro.fr
 Input : Single end library with only one fastq file by experiment
 ____________________
 
-Output : One cleaned fastq file 
+Output : One filtered fastq file 
 ____________________
 
 
@@ -35,7 +37,7 @@ Input : Paired end library with R1 & R2 fastq files with overlap exptected by ex
 ____________________
              ____________________
 
-Output : One cleaned & merged (with Pear) fastq file
+Output : One filtered & merged (with Pear) fastq file
 _________________________________
 
 
@@ -47,12 +49,12 @@ Input : Paired end library with R1 & R2 fastq files without overlap exptected by
 ____________________
                                  ____________________
 
-Output : One cleaned & concatenated fastq file
+Output : One filtered & concatenated fastq file
 ____________________
 ____________________
 
 
-This script will process all fastq files ./raw_input/expression whitout questions.
+This script will process all fastq files ./raw_input/expression without questions.
 
 The input file(s)'s names must countain "_R1_" & "_R2_" for steps 2 & 3 
 The input file(s) must be in ./raw_input/expression and in fastq format.
