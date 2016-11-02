@@ -14,15 +14,17 @@ Version 20160919
 ¤ Cleaner & merger
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 
 ¤ Option 1)
 
 Input : Single end library with only one fastq file
 ____________________
 
-Output : One cleaned fastq file 
+Output : One filtered fastq file 
 ____________________
 
 
@@ -34,7 +36,7 @@ Input : Paired end library with R1 & R2 fastq files with overlap exptected
 ____________________
              ____________________
 
-Output : One cleaned & merged (with Pear) fastq file
+Output : One filtered & merged (with Pear) fastq file
 _________________________________
 
 
@@ -46,7 +48,7 @@ Input : Paired end library with R1 & R2 fastq files without overlap exptected
 ____________________
                                  ____________________
 
-Output : One cleaned & concatenated fastq file
+Output : One filtered & concatenated fastq file
 ____________________
 ____________________
 
@@ -93,7 +95,7 @@ do
     esac
 done
 
-echo "Type a name for the cleaned fastq (without space ex: drer_merged), followed by [ENTER]:"
+echo "Type a name for the filtered fastq (without space ex: drer_merged), followed by [ENTER]:"
 read name
 
 if [ "$argu" = "1" ]; then
@@ -119,7 +121,7 @@ rm -rf ./"$R1"_query.fq
 rm -rf ./cleantrinityR1.fq
 
 echo ""
-echo "Cleaning in progress ..."
+echo "Filtering in progress ..."
 echo ""
 
 time parallel --gnu --progress --max-procs 1 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: "$R1"
@@ -176,7 +178,7 @@ rm -rf ./cleantrinityR1.fq
 rm -rf ./cleantrinityR2.fq
 
 echo ""
-echo "Cleaning in progress ..."
+echo "Filtering in progress ..."
 echo ""
 
 
