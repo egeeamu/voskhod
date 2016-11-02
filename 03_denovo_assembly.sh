@@ -14,28 +14,30 @@ Version 20160920
 ¤ De novo assembly / Trinity wrapper
 Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
 
-If you have unstranded library :
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
+
+If you have an unstranded library :
 
 > Choose Option 1 if:
-  You have single end unstranded library with only onefastq file
-  This step will launch Trinity with relevant parameters for single input file and unstranded library.
+  You have a single end unstranded library with only one fastq file
+  This step will launch Trinity with relevant parameters for single input file and an unstranded library.
 
 > Choose Option 2 if:
-  You have paired end unstranded library with R1 & R2 fastq files
-  This step will launch Trinity with relevant parameters for left/right input files and unstranded library.
+  You have a paired end unstranded library with R1 & R2 fastq files
+  This step will launch Trinity with relevant parameters for input files and an unstranded library.
   
-If you have stranded library :
+If you have a stranded library :
 
 > Choose Option 3 if:
-  You have single end stranded library with only onefastq file
-  This step will launch Trinity with relevant parameters for single input file and stranded library.
+  You have a single end stranded library with only one fastq file
+  This step will launch Trinity with relevant parameters for a single input file and a stranded library.
 
 > Choose Option 4 if:
-  You have paired end stranded library with R1 & R2 fastq files
-  This step will launch Trinity with relevant parameters for left/right input files and stranded library.
+  You have a paired end stranded library with R1 & R2 fastq files
+  This step will launch Trinity with relevant parameters for input files and a stranded library.
 
 
 There are four stranded library types:
@@ -46,16 +48,16 @@ in the sense strand (forward(F)); typical of the dUTP/UDG sequencing method.
 ¤ FR: first read (/1) of fragment pair is sequenced as sense (forward), and second read (/2) is in the
 antisense strand (reverse)
 
-> Unpaired (single) reads:
+> single reads:
 ¤ F: the single read is in the sense (forward) orientation
 ¤ R: the single read is in the antisense (reverse) orientation 
 
-This script assume you use the dUTP/UDG sequencing method, and if you select stranded options (3 or 4), RF (paired) & R (single) parameter is given to Trinity.
+This script assumes you use the dUTP/UDG sequencing method, and if you select stranded options (3 or 4), RF (paired) & R (single) parameter is given to Trinity.
 If you use another sequencing method, modify this option in the script, or if unknown, use unstranded options (1 or 2). 
 
 
 The input file(s) must be in ./cleaned_input/assembly and in fastq format.
-The assembly files will be in ./assembly/raw
+The assembly files will be in ./assembly/raw/trinity
 
 EndOfMessage
 
@@ -102,11 +104,11 @@ echo "Type the name of the assembled species (without space ex: drer_trinity), f
 read name
 echo ""
 echo ""
-echo "Type the number of core to use, followed by [ENTER]:"
+echo "Type the number of cores to use, followed by [ENTER]:"
 read cores
 echo ""
 echo ""
-echo "Type the max mem tu use (in GB), followed by [ENTER]:"
+echo "Type the max memory tu use (in GB), followed by [ENTER]:"
 read maxram
 echo ""
 echo ""
@@ -162,11 +164,11 @@ echo "Type the name of the assembled species (without space ex: drer_trinity), f
 read name
 echo ""
 echo ""
-echo "Type the number of core to use, followed by [ENTER]:"
+echo "Type the number of cores to use, followed by [ENTER]:"
 read cores
 echo ""
 echo ""
-echo "Type the max mem tu use (in GB), followed by [ENTER]:"
+echo "Type the max memory tu use (in GB), followed by [ENTER]:"
 read maxram
 echo ""
 echo ""
@@ -241,11 +243,11 @@ echo "Type the name of the assembled species (without space ex: drer_trinity), f
 read name
 echo ""
 echo ""
-echo "Type the number of core to use, followed by [ENTER]:"
+echo "Type the number of cores to use, followed by [ENTER]:"
 read cores
 echo ""
 echo ""
-echo "Type the max mem tu use (in GB), followed by [ENTER]:"
+echo "Type the max memory tu use (in GB), followed by [ENTER]:"
 read maxram
 echo ""
 echo ""
@@ -301,11 +303,11 @@ echo "Type the name of the assembled species (without space ex: drer_trinity), f
 read name
 echo ""
 echo ""
-echo "Type the number of core to use, followed by [ENTER]:"
+echo "Type the number of cores to use, followed by [ENTER]:"
 read cores
 echo ""
 echo ""
-echo "Type the max mem tu use (in GB), followed by [ENTER]:"
+echo "Type the max memory tu use (in GB), followed by [ENTER]:"
 read maxram
 echo ""
 echo ""
