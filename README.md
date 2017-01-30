@@ -16,15 +16,17 @@ It surely works on other flavours of Linux OS but we will not be able to provide
 
 If using a fresh Ubuntu install, you will have to install dependencies and linux packages with administrator privileges :
 
+Warning: usage of version 0.5.0 of the biomart library is required.
+
 > aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3 software-properties-common
 
 > add-apt-repository ppa:webupd8team/java
 
 > aptitude update
 
-> aptitude insta ll oracle-java8-installer
+> aptitude install oracle-java8-installer
 
-> pip install biomart
+> pip install -Iv http://arnaud-ungaro.fr/voskhod/redist/lib/biomart-0.5.0.tar.gz
 
 > pip install bashplotlib
 
