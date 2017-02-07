@@ -106,11 +106,11 @@ When requested, select your merged transcriptomes (all species + ref), and the f
 
 > ./07_voskhod_matching_and_assembling.sh
 
-The script writes its output in ./assembly/raw/voskhod/. The next validation steps requires that you move (or copy) yourself the produced fastq file to ./assembly/raw before processing.
+The script writes its output in ./assembly/raw/voskhod/. 
 
 
 8- Validate and anotate the assembly (like step 4):
-When asked, select the assembly from the corresponding fastq file found at ./assembly/raw. The reference teanscriptome required in this step is the reference species from Ensembl to avoid circularity with the denovo inference.
+When asked, select the assembly from the corresponding fastq file found at ./assembly/raw/voskhod/ The reference teanscriptome required in this step is the reference species from Ensembl to avoid circularity with the denovo inference.
 
 
 > ./08_voskhod_validate_assembly_.sh
