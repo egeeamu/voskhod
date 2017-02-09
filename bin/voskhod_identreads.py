@@ -23,11 +23,15 @@ step = 10000
 cpu = 8 # dont touch this ! For developmental purpose only
 hsp_read_percent = 70
 wordsize = 9
-crosspe = "Y" # Y or N
-savesequences = "Y"
-lenhash = 50
+
+################################
+##DEV PARAMETERS DONT TOUCH !!!!
+lenhash = 50 # desactivated dont touch !!
 hashseq = True # desactivated dont touch !!
 keep_multihits = True
+crosspe = "Y" # Y or N
+savesequences = "Y"
+
 
 if crosspe == "Y":
     blastlunch = str("""../../bin/ncbi-blast-2.4.0+/bin/blastn -task blastn -num_threads """ + str(cpu) + """ -query ./""" + rundir + """/tmp.fasta -db ./db/db -out ./""" + rundir + """/out.txt -qcov_hsp_perc """ + str(hsp_read_percent) + """ -evalue 0.05 -window_size 0 -outfmt "6 qseqid stitle pident sstrand evalue score qseq nident" -dust yes -soft_masking yes -lcase_masking -reward 1 -penalty -1 -gapopen 1 -gapextend 2 -word_size """ + str(wordsize))
