@@ -66,7 +66,7 @@ print """
 | |/ // /_/ /(__  )/ ,<  / / / // /_/ // /_/ /
 |___/ \____//____//_/|_|/_/ /_/ \____/ \__,_/
 
-Version 20160222A
+Version 20170209A
 Automatic Blast / Reads tagger
 Part of the Voskhod project
 
