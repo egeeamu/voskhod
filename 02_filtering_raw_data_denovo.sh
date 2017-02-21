@@ -89,7 +89,7 @@ echo ""
 echo "Filtering in progress ..."
 echo ""
 
-time parallel --gnu --progress --max-procs 2 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: "$R1"
+time parallel --gnu --progress --max-procs 2 -u 'python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: "$R1"
 #time parallel --gnu --progress --max-procs 8 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: ./*.fastq
 
 echo ""
@@ -154,7 +154,7 @@ echo ""
 echo "Filtering in progress ..."
 echo ""
 
-time parallel --gnu --progress --max-procs 2 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: "$R1" "$R2"
+time parallel --gnu --progress --max-procs 2 -u 'python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: "$R1" "$R2"
 #time parallel --gnu --progress --max-procs 8 'nice -n 19 python vosklean_sequences_cleaner_assembly_keep_pw.py {}' ::: ./*.fastq
 
 echo ""
