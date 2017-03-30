@@ -23,6 +23,7 @@ Warning: usage of version 0.5.0 of the biomart python library is required.
 > aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3 software-properties-common
 
 > add-apt-repository ppa:webupd8team/java
+> aptitude install oracle-java8-set-default
 
 > aptitude update
 
