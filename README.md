@@ -1,4 +1,6 @@
-# Voskhod
+# Voskhod 
+# Version : v1.0_20161031
+
 This is the repository for the Transcriptome inference and RNAseq expression bioniformatics pipeline Voskhod.
 
 Voskhod allows conducting the transcriptome inference and gene expression analyses as detailed in our paper Challenges and solutions for transcriptome assembly in non-model organisms with an application to hybrid specimens
