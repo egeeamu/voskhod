@@ -9,14 +9,15 @@ cat << EndOfMessage
 | |/ // /_/ /(__  )/ ,<  / / / // /_/ // /_/ /
 |___/ \____//____//_/|_|/_/ /_/ \____/ \__,_/
 
-Version 20160920
-¤ Voskhod validator
-Part of the Voskhod project
+¤ Voskhod assembly validator
 
+Version 20170331
+Voskhod Pipeline version V1.1
+Part of the Voskhod project
+https://github.com/egeeamu/voskhod
 
 (CC-BY-NC-ND 4.0 International license) 
 Arnaud Ungaro contact@arnaud-ungaro.fr
-
 
 Input must be in ./assembly/raw in fasta file format.
 Output will be in ./assembly/validated in sqlite file format.

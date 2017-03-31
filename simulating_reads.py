@@ -12,6 +12,7 @@ from collections import *
 import string
 import random
 
+# simulated reads come from cdna_infos.db, and must be in ./data_input
 size_fragments = 100
 coverage_value = 1
 overfix = 50
@@ -94,13 +95,17 @@ ______ _           _
 | |   | | | | (_) | |_) | (_) \__ \\
 \_|   |_| |_|\___/|_.__/ \___/|___/
 
-Version 20150813A
-Illumina sequencing simulator
+¤ Illumina sequencing simulator
 All sequences version
-Part of the Voskhod project
 
-(C) Arnaud Ungaro
-contact@arnaud-ungaro.fr
+Version 20170331
+Voskhod Pipeline version V1.1
+Part of the Voskhod project
+https://github.com/egeeamu/voskhod
+
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
 """
 print "Depth     : " + str(coverage_value)
 print "Overlap   : " + str(overfix)

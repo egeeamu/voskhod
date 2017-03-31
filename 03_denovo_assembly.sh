@@ -10,14 +10,15 @@ cat << EndOfMessage
 | |/ // /_/ /(__  )/ ,<  / / / // /_/ // /_/ /
 |___/ \____//____//_/|_|/_/ /_/ \____/ \__,_/
 
-Version 20160920
 ¤ De novo assembly / Trinity wrapper
-Part of the Voskhod project
 
+Version 20170331
+Voskhod Pipeline version V1.1
+Part of the Voskhod project
+https://github.com/egeeamu/voskhod
 
 (CC-BY-NC-ND 4.0 International license) 
 Arnaud Ungaro contact@arnaud-ungaro.fr
-
 
 If you have an unstranded library :
 
@@ -139,11 +140,11 @@ rm -rfv trinity_part_"$name"
 mkdir -p trinity_part_"$name"
 mkdir -p assembly/raw/trinity
 cd ./trinity_part_"$name"
-../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
-#../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
+../bin/trinityrnaseq/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
+#../bin/trinityrnaseq/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
 
 #--normalize_reads
-#nice -n 19 ../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --left ../cleaned_input/assembly/R1_cleaned_sync.fastq --right ../cleaned_input/assembly/R2_cleaned_sync.fastq --normalize_reads --CPU 8 --max_memory 12G | tee ../logs/logs_trinity_R1_R2.txt
+#nice -n 19 ../bin/trinityrnaseq/Trinity --seqType fq --left ../cleaned_input/assembly/R1_cleaned_sync.fastq --right ../cleaned_input/assembly/R2_cleaned_sync.fastq --normalize_reads --CPU 8 --max_memory 12G | tee ../logs/logs_trinity_R1_R2.txt
 
 
 cd trinity_out_dir
@@ -218,11 +219,11 @@ rm -rfv trinity_part_"$name"
 mkdir -p trinity_part_"$name"
 mkdir -p assembly/raw/trinity
 cd ./trinity_part_"$name"
-../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
-#nice -n "$nicevalue" ../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
+../bin/trinityrnaseq/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
+#nice -n "$nicevalue" ../bin/trinityrnaseq/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
 
 #--normalize_reads
-#nice -n 19 ../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --left ../cleaned_input/assembly/R1_cleaned_sync.fastq --right ../cleaned_input/assembly/R2_cleaned_sync.fastq --normalize_reads --CPU 8 --max_memory 12G | tee ../logs/logs_trinity_R1_R2.txt
+#nice -n 19 ../bin/trinityrnaseq/Trinity --seqType fq --left ../cleaned_input/assembly/R1_cleaned_sync.fastq --right ../cleaned_input/assembly/R2_cleaned_sync.fastq --normalize_reads --CPU 8 --max_memory 12G | tee ../logs/logs_trinity_R1_R2.txt
 
 
 cd trinity_out_dir
@@ -278,11 +279,11 @@ rm -rfv trinity_part_"$name"
 mkdir -p trinity_part_"$name"
 mkdir -p assembly/raw/trinity
 cd ./trinity_part_"$name"
-../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --single ."$R1" --SS_lib_type R --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
-#../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
+../bin/trinityrnaseq/Trinity --seqType fq --single ."$R1" --SS_lib_type R --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
+#../bin/trinityrnaseq/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
 
 #--normalize_reads
-#nice -n 19 ../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --left ../cleaned_input/assembly/R1_cleaned_sync.fastq --right ../cleaned_input/assembly/R2_cleaned_sync.fastq --normalize_reads --CPU 8 --max_memory 12G | tee ../logs/logs_trinity_R1_R2.txt
+#nice -n 19 ../bin/trinityrnaseq/Trinity --seqType fq --left ../cleaned_input/assembly/R1_cleaned_sync.fastq --right ../cleaned_input/assembly/R2_cleaned_sync.fastq --normalize_reads --CPU 8 --max_memory 12G | tee ../logs/logs_trinity_R1_R2.txt
 
 
 cd trinity_out_dir
@@ -357,11 +358,11 @@ rm -rfv trinity_part_"$name"
 mkdir -p trinity_part_"$name"
 mkdir -p assembly/raw/trinity
 cd ./trinity_part_"$name"
-../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --left ."$R1" --right ."$R2" --SS_lib_type RF --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
-#nice -n "$nicevalue" ../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
+../bin/trinityrnaseq/Trinity --seqType fq --left ."$R1" --right ."$R2" --SS_lib_type RF --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
+#nice -n "$nicevalue" ../bin/trinityrnaseq/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
 
 #--normalize_reads
-#nice -n 19 ../bin/trinityrnaseq-2.2.0/Trinity --seqType fq --left ../cleaned_input/assembly/R1_cleaned_sync.fastq --right ../cleaned_input/assembly/R2_cleaned_sync.fastq --normalize_reads --CPU 8 --max_memory 12G | tee ../logs/logs_trinity_R1_R2.txt
+#nice -n 19 ../bin/trinityrnaseq/Trinity --seqType fq --left ../cleaned_input/assembly/R1_cleaned_sync.fastq --right ../cleaned_input/assembly/R2_cleaned_sync.fastq --normalize_reads --CPU 8 --max_memory 12G | tee ../logs/logs_trinity_R1_R2.txt
 
 
 cd trinity_out_dir

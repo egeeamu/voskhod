@@ -9,14 +9,15 @@ cat << EndOfMessage
 | |/ // /_/ /(__  )/ ,<  / / / // /_/ // /_/ /
 |___/ \____//____//_/|_|/_/ /_/ \____/ \__,_/
 
-Version 20160920
 ¤ Voskhod assembler
-Part of the Voskhod project
 
+Version 20170331
+Voskhod Pipeline version V1.1
+Part of the Voskhod project
+https://github.com/egeeamu/voskhod
 
 (CC-BY-NC-ND 4.0 International license) 
 Arnaud Ungaro contact@arnaud-ungaro.fr
-
 
 Input must be in ./cleaned_input/assembly
 Output will be in ./assembly/raw/voskhod
@@ -80,7 +81,7 @@ mkdir -p ./assembly/validated
 
 cp ./bin/voskhod_identreads.py ./voskhod_part_assembly_"$name"/ident_reads/
 cp ./bin/cap3.linux.x86_64.tar.gz ./voskhod_part_assembly_"$name"/ident_reads/bin/
-cp ./bin/SPAdes-3.6.2-Linux.tar.gz ./voskhod_part_assembly_"$name"/ident_reads/bin/
+cp ./bin/SPAdes.tar.gz ./voskhod_part_assembly_"$name"/ident_reads/bin/
 cp ./bin/limitfa.py ./voskhod_part_assembly_"$name"/ident_reads/
 cp ./bin/limitfq.py ./voskhod_part_assembly_"$name"/ident_reads/
 cp ./bin/vosklink_voskhod_assembler_realdata.py ./voskhod_part_assembly_"$name"/ident_reads/vosklink_voskhod_assembler.py
