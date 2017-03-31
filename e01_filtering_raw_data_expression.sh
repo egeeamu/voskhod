@@ -10,15 +10,15 @@ cat << EndOfMessage
 | |/ // /_/ /(__  )/ ,<  / / / // /_/ // /_/ /
 |___/ \____//____//_/|_|/_/ /_/ \____/ \__,_/
 
-Version 20160919
 ¤ Cleaner & merger expression
-Part of the Voskhod project
 
+Version 20170331
+Voskhod Pipeline version V1.1
+Part of the Voskhod project
+https://github.com/egeeamu/voskhod
 
 (CC-BY-NC-ND 4.0 International license) 
 Arnaud Ungaro contact@arnaud-ungaro.fr
-
-
 
 ¤ Option 1)
 
@@ -100,7 +100,7 @@ mkdir -p ./cleaned_input
 mkdir -p ./cleaned_input/expression
 
 cd ./raw_input/expression
-time parallel --gnu --progress --max-procs 8 'python vosklean_sequences_cleaner_expression.py {}' ::: *.f*q
+time parallel --gnu --progress --max-procs 8 -u 'python vosklean_sequences_cleaner_expression.py {}' ::: *.f*q
 mv -v ./logs/* ../../logs
 rename  "s/query/cleaned/" *_query.f*q
 mv -v *cleaned.fq ../../cleaned_input/expression
@@ -113,7 +113,7 @@ if [ "$argu" = "2" ]; then
 
 
 cp ./bin/automated_pear.py ./raw_input/expression/.
-cp ./bin/pear-0.9.10-bin-64/pear-0.9.10-bin-64 ./raw_input/expression/.
+cp ./bin/pear/pear ./raw_input/expression/.
 #cp ./bin/vosklean_sequences_cleaner_assembly_keep_pw.py ./raw_input/assembly
 cp ./bin/vosklean_sequences_cleaner_expression.py ./raw_input/expression/
 mkdir -p ./logs
@@ -122,11 +122,11 @@ mkdir -p ./cleaned_input/expression
 
 cd ./raw_input/expression
 python automated_pear.py
-rm -rfv *_PEAR_Merged_*.unassembled.*.fastq *_PEAR_Merged_*.discarded.fastq automated_pear.py pear-0.9.10-bin-64
+rm -rfv *_PEAR_Merged_*.unassembled.*.f*q *_PEAR_Merged_*.discarded.f*q automated_pear.py pear
 mv -v *_logs.txt ../../logs
-time parallel --gnu --progress --max-procs 8 'python vosklean_sequences_cleaner_expression.py {}' ::: *_PEAR_Merged_*.fastq.assembled*
+time parallel --gnu --progress --max-procs 8 -u 'python vosklean_sequences_cleaner_expression.py {}' ::: *_PEAR_Merged_*.f*q.assembled*
 mv -v ./logs/* ../../logs
-mv -v *PEAR_Merged_*.assembled.fastq_query.fq ../../cleaned_input/expression
+mv -v *PEAR_Merged_*.assembled.f*q_query.fq ../../cleaned_input/expression
 rm -rfv *PEAR_Merged_*.assembled.f*q logs *.py
 
 fi
@@ -136,7 +136,7 @@ if [ "$argu" = "3" ]; then
 
 
 cp ./bin/automated_cat.py ./raw_input/expression/.
-cp ./bin/pear-0.9.10-bin-64/pear-0.9.10-bin-64 ./raw_input/expression/.
+cp ./bin/pear/pear ./raw_input/expression/.
 #cp ./bin/vosklean_sequences_cleaner_assembly_keep_pw.py ./raw_input/assembly
 cp ./bin/vosklean_sequences_cleaner_expression.py ./raw_input/expression/
 mkdir -p ./logs
@@ -145,9 +145,9 @@ mkdir -p ./cleaned_input/expression
 
 cd ./raw_input/expression
 python automated_cat.py
-rm -rfv *_concatenated_*.unassembled.*.fastq *_concatenated_*.discarded.fastq automated_pear.py pear-0.9.10-bin-64
+rm -rfv *_concatenated_*.unassembled.*.f*q *_concatenated_*.discarded.f*q automated_pear.py pear
 #mv -v *_logs.txt ../../logs
-time parallel --gnu --progress --max-procs 8 'python vosklean_sequences_cleaner_expression.py {}' ::: *_concatenated_*.f*q
+time parallel --gnu --progress --max-procs 8 -u 'python vosklean_sequences_cleaner_expression.py {}' ::: *_concatenated_*.f*q
 mv -v ./logs/* ../../logs
 rename  "s/query/cleaned/" *_query.fq
 mv -v *cleaned*.f*q ../../cleaned_input/expression

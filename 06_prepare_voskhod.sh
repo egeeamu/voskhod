@@ -10,10 +10,12 @@ cat << EndOfMessage
 | |/ // /_/ /(__  )/ ,<  / / / // /_/ // /_/ /
 |___/ \____//____//_/|_|/_/ /_/ \____/ \__,_/
 
-Version 20160919
 ¤ Cleaner & merger
-Part of the Voskhod project
 
+Version 20170331
+Voskhod Pipeline version V1.1
+Part of the Voskhod project
+https://github.com/egeeamu/voskhod
 
 (CC-BY-NC-ND 4.0 International license) 
 Arnaud Ungaro contact@arnaud-ungaro.fr
@@ -63,7 +65,7 @@ EndOfMessage
 
 
 
-cp ./bin/pear-0.9.10-bin-64/pear-0.9.10-bin-64 ./raw_input/assembly/
+cp ./bin/pear/pear ./raw_input/assembly/
 cp ./bin/vosklean_sequences_cleaner_assembly_keep_pw.py ./raw_input/assembly
 mkdir -p ./cleaned_input/assembly
 cd ./raw_input/assembly/
@@ -132,7 +134,7 @@ rm -rfv "$R1"_query.fq
 
 
 mv -v ./logs/* ../../logs
-rm -rfv logs "$name".assembled.fastq "$name".discarded.fastq "$name".unassembled.forward.fastq "$name".unassembled.reverse.fastq vosklean_sequences_cleaner_assembly_keep_pw.py pear-0.9.10-bin-64 afterclean_remove_bad_pw.py
+rm -rfv logs "$name".assembled.fastq "$name".discarded.fastq "$name".unassembled.forward.fastq "$name".unassembled.reverse.fastq vosklean_sequences_cleaner_assembly_keep_pw.py pear afterclean_remove_bad_pw.py
 
 fi
 
@@ -201,7 +203,7 @@ echo "Concatenating done ! "
 echo ""
 
 mv -v ./logs/* ../../logs
-rm -rfv logs "$name".assembled.fastq "$name".discarded.fastq "$name".unassembled.forward.fastq "$name".unassembled.reverse.fastq vosklean_sequences_cleaner_assembly_keep_pw.py pear-0.9.10-bin-64 afterclean_remove_bad_pw.py
+rm -rfv logs "$name".assembled.fastq "$name".discarded.fastq "$name".unassembled.forward.fastq "$name".unassembled.reverse.fastq vosklean_sequences_cleaner_assembly_keep_pw.py pear afterclean_remove_bad_pw.py
 
 
 
@@ -251,11 +253,11 @@ done
 echo ""
 echo ""
 
-./pear-0.9.10-bin-64 -j 8 -n 30 -v 8 -f "$R1" -r "$R2" -o "$name"
+./pear -j 8 -n 30 -v 8 -f "$R1" -r "$R2" -o "$name"
 python ./vosklean_sequences_cleaner_assembly_keep_pw.py ./"$name".assembled.fastq
 rm -rfv ../../cleaned_input/assembly/"$name".assembled.fastq_query.fq
 mv -v "$name".assembled.fastq_query.fq ../../cleaned_input/assembly/"$name".assembled.fastq_query.fq
 mv -v ./logs/* ../../logs
-rm -rfv logs "$name".assembled.fastq "$name".discarded.fastq "$name".unassembled.forward.fastq "$name".unassembled.reverse.fastq vosklean_sequences_cleaner_assembly_keep_pw.py pear-0.9.10-bin-64 
+rm -rfv logs "$name".assembled.fastq "$name".discarded.fastq "$name".unassembled.forward.fastq "$name".unassembled.reverse.fastq vosklean_sequences_cleaner_assembly_keep_pw.py pear 
 
 fi

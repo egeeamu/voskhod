@@ -10,14 +10,15 @@ cat << EndOfMessage
 | |/ // /_/ /(__  )/ ,<  / / / // /_/ // /_/ /
 |___/ \____//____//_/|_|/_/ /_/ \____/ \__,_/
 
-Version 20160920
 ¤ Voskhod Expression
-Part of the Voskhod project
 
+Version 20170331
+Voskhod Pipeline version V1.1
+Part of the Voskhod project
+https://github.com/egeeamu/voskhod
 
 (CC-BY-NC-ND 4.0 International license) 
 Arnaud Ungaro contact@arnaud-ungaro.fr
-
 
 Input must be in ./cleaned_input/expression in fastq file format.
 Output will be in ./expression_results/ in sqlite and csv format.

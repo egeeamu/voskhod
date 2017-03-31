@@ -1,6 +1,11 @@
-# Voskhod 
-# Version : v1.0_20161031
+Voskhod Pipeline version V1.1
+Part of the Voskhod project
+https://github.com/egeeamu/voskhod
 
+(CC-BY-NC-ND 4.0 International license) 
+Arnaud Ungaro contact@arnaud-ungaro.fr
+
+# Voskhod
 This is the repository for the Transcriptome inference and RNAseq expression bioniformatics pipeline Voskhod.
 
 Voskhod allows conducting the transcriptome inference and gene expression analyses as detailed in our paper Challenges and solutions for transcriptome assembly in non-model organisms with an application to hybrid specimens
@@ -27,8 +32,6 @@ Warning: usage of version 0.5.0 of the biomart python library is required.
 > aptitude update
 
 > aptitude install oracle-java8-installer
-
-> aptitude install oracle-java8-set-default
 
 > pip install -Iv http://arnaud-ungaro.fr/voskhod/redist/lib/biomart-0.5.0.tar.gz
 
