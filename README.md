@@ -59,17 +59,20 @@ This script transforms a fasta file (preferably downloaded from Ensembl as it pr
 If you are working with ensembl (may work with plan,metazoa,etc..) dataset :
 
 Get coding rna :
-xx.xx.xx.cdna.all.fa.gz from :
-ftp://ftp.ensembl.org/pub/release-XX/fasta/species_sp/cdna/
-for example : ftp://ftp.ensembl.org/pub/release-89/fasta/danio_rerio/cdna/Danio_rerio.GRCz10.cdna.all.fa.gz
+xx.xx.xx.cdna.all.fa.gz from for the species of your choice from :
+ftp://ftp.ensembl.org/pub/current_fasta/
+for example : ftp://ftp.ensembl.org/pub/current_fasta/danio_rerio/cdna/Danio_rerio.GRCz10.cdna.all.fa.gz
 
 Get non-coding rna :
-and  xx.xx.xx.ncrna.fa.gz from :
-ftp://ftp.ensembl.org/pub/release-XX/fasta/species_sp/ncrna/
-for example ftp://ftp.ensembl.org/pub/release-89/fasta/danio_rerio/ncrna/Danio_rerio.GRCz10.ncrna.fa.gz
+and  xx.xx.xx.ncrna.fa.gz for the species of yur choice from :
+ftp://ftp.ensembl.org/pub/current_fasta/
+for example ftp://ftp.ensembl.org/pub/current_fasta/danio_rerio/ncrna/Danio_rerio.GRCz10.ncrna.fa.gz
 
-Unpack your reference fasta file in "failsafe_input"
-For example > gzip -d Danio_rerio.GRCz10.cdna.all.fa.gz and put this in "failsafe_input"
+Unpack your reference fasta file in "failsafe_input" within the voskhod folder. For example
+> gzip -d Danio_rerio.GRCz10.cdna.all.fa.gz and put this in "failsafe_input"
+
+Run the conversion script that converts the reference fasta into a SQlite database
+> python 01b_failsafe_cdna_formater_from_fasta.py
 
 If you are working with custom data-set, make sure your fasta is formated like this :
 
@@ -80,16 +83,8 @@ sequence
 
 without space or special character in names, then put it in "failsafe_input".
 
-Launch the sript with :
-
+Run the conversion script that converts the reference fasta into a SQlite database and precise the Species name
 > python 01b_failsafe_cdna_formater_from_fasta.py -s SpeciesName
-
-
-
-> python 01b_failsafe_cdna_formater_from_fasta.py
-
-
-This script allow you to work with non-standard dataset (not from ensembl) or problematic biomart dataset.
 
 2- Filter raw input data (uncompressed fastq files) before denovo assembly.
 If you have multiple R1 and R2 files, concatenate them into one "large" R1 & one "large" R2.  (e.g. cat *R1* > largeR1.fastq) unless you need to keep track of the source for further analyses.
