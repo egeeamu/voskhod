@@ -33,8 +33,6 @@ Warning: usage of version 0.5.0 of the biomart python library is required.
 
 > apt-get install oracle-java8-installer (accept terms)
 
-> pip install -Iv http://arnaud-ungaro.fr/voskhod/redist/lib/biomart-0.5.0.tar.gz
-
 > pip install bashplotlib
 
 and finally get Voskhod (as non-root unser)!
@@ -45,6 +43,8 @@ and finally get Voskhod (as non-root unser)!
 Make sure you have all permissions on the voskhod folders (else all commands would require using sudo permissions).
 The first time you use the pipeline you have to download associated tools and compile them. The following commands achieve this task automatically. In the voskhod folder type:
 
+> cd voskhod/
+
 > chmod +x *.sh
 
 > ./00_prepare_voskhod.sh
@@ -53,21 +53,9 @@ Once this step is done you are ready to use Voskhod!
 
 #Transcriptome assembly
 
+1- Download and format the reference transcriptome.
 
-1- Download and format the reference transcriptome from Ensembl.
-
-From https://github.com/egeeamu/voskhod/blob/master/dataset_ensembl.txt select the Ensembl Genes 86 dataset name for your prefered  reference species (e.g. drerio_gene_ensembl in the case of Danio rerio) and edit the 01_cdna_downloader.py script with the correct dataset name for your reference transcriptome. Once you execute the python script (see below), the reference trancriptome will be downloaded and formated in ./reference_ts (with the correct sqlite format as a db file):
-
-> python 01a_cdna_downloader.py
-
-
-If the process fail or if you use dataset not from Ensembl, use this one :
-
-> python 01b_failsafe_cdna_formater_from_fasta.py
-
-
-This script allow you to work with non-standard dataset (not from ensembl) or problematic biomart dataset.
-
+This script transforms a fasta file (preferably downloaded from Ensembl as it provides metadata)
 If you are working with ensembl (may work with plan,metazoa,etc..) dataset :
 
 Get coding rna :
@@ -80,8 +68,8 @@ and  xx.xx.xx.ncrna.fa.gz from :
 ftp://ftp.ensembl.org/pub/release-XX/fasta/species_sp/ncrna/
 for example ftp://ftp.ensembl.org/pub/release-89/fasta/danio_rerio/ncrna/Danio_rerio.GRCz10.ncrna.fa.gz
 
-unpack (gzip -d) and put this in "failsafe_input"
-
+Unpack your reference fasta file in "failsafe_input"
+For example > gzip -d Danio_rerio.GRCz10.cdna.all.fa.gz and put this in "failsafe_input"
 
 If you are working with custom data-set, make sure your fasta is formated like this :
 
@@ -92,12 +80,16 @@ sequence
 
 without space or special character in names, then put it in "failsafe_input".
 
-
 Launch the sript with :
 
-python 01b_failsafe_cdna_formater_from_fasta.py -s SpeciesName
-Put in failsafe_input the cdna fasta files of your reference species. 
+> python 01b_failsafe_cdna_formater_from_fasta.py -s SpeciesName
 
+
+
+> python 01b_failsafe_cdna_formater_from_fasta.py
+
+
+This script allow you to work with non-standard dataset (not from ensembl) or problematic biomart dataset.
 
 2- Filter raw input data (uncompressed fastq files) before denovo assembly.
 If you have multiple R1 and R2 files, concatenate them into one "large" R1 & one "large" R2.  (e.g. cat *R1* > largeR1.fastq) unless you need to keep track of the source for further analyses.
