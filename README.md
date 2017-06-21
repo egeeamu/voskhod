@@ -73,10 +73,12 @@ If you are working with ensembl (may work with plan,metazoa,etc..) dataset :
 Get coding rna :
 xx.xx.xx.cdna.all.fa.gz from :
 ftp://ftp.ensembl.org/pub/release-XX/fasta/species_sp/cdna/
+for example : ftp://ftp.ensembl.org/pub/release-89/fasta/danio_rerio/cdna/Danio_rerio.GRCz10.cdna.all.fa.gz
 
 Get non-coding rna :
 and  xx.xx.xx.ncrna.fa.gz from :
 ftp://ftp.ensembl.org/pub/release-XX/fasta/species_sp/ncrna/
+for example ftp://ftp.ensembl.org/pub/release-89/fasta/danio_rerio/ncrna/Danio_rerio.GRCz10.ncrna.fa.gz
 
 unpack (gzip -d) and put this in "failsafe_input"
 
