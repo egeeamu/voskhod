@@ -2,7 +2,7 @@ Voskhod Pipeline version V1.1
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
-(CC-BY-NC-ND 4.0 International license) 
+GNU General Public License v3.0
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 # Voskhod
@@ -25,13 +25,13 @@ If using a fresh Ubuntu install, you will have to install dependencies and linux
 
 Warning: usage of version 0.5.0 of the biomart python library is required.
 
-> aptitude install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3 software-properties-common
+> apt-get install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3 software-properties-common
 
-> add-apt-repository ppa:webupd8team/java
+> add-apt-repository ppa:webupd8team/java (validate with pressing Enter)
 
-> aptitude update
+> apt-get update
 
-> aptitude install oracle-java8-installer
+> apt-get install oracle-java8-installer (accept terms)
 
 > pip install -Iv http://arnaud-ungaro.fr/voskhod/redist/lib/biomart-0.5.0.tar.gz
 
