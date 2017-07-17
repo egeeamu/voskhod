@@ -125,17 +125,17 @@ the combined output will be stored in ./reference_ts
 Now we can identify reads using the combination of reference transcriptome species and the denovo assembly.
 
 
-6- Prepare reads for Voskhod assembly:
+6- Prepare reads for transcriptome-guided assembly:
 Using the same raw input fastq files as step 2, filter reads for quality and optionally merge paired-end reads if relevant. The input fastq file(s) must be in ./raw_input/assembly/
 
 > ./06_prepare_voskhod.sh
 
 The filtered ans merged (when PE sequencing is used) reads will be found in ./cleaned_input/assembly/
 
-7- Identify (blast) and make Voskhod assembly:
+7- Assign (blast) and transcriptome-guided assembly:
 When requested, select your merged transcriptomes (all species + ref), and the filtered fastq file for your source to be inferred.
 
-> ./07_voskhod_matching_and_assembling.sh
+> ./07_assign_and_assemble.sh
 
 The script writes its output in ./assembly/raw/voskhod/. 
 
