@@ -53,8 +53,8 @@ Once this step is done you are ready to use Voskhod!
 1- Download and format the reference transcriptome.
 
 This script transforms a fasta file (preferably downloaded from Ensembl as it provides metadata)
-If you are working with ensembl (may work with plan,metazoa,etc..) dataset :
 
+If you are working with ensembl (may work with plan,metazoa,etc..) dataset :
 Get coding rna :
 xx.xx.xx.cdna.all.fa.gz from for the species of your choice from :
 ftp://ftp.ensembl.org/pub/current_fasta/
