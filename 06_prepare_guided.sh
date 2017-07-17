@@ -23,7 +23,7 @@ Arnaud Ungaro contact@arnaud-ungaro.fr
 
 ¤ Option 1)
 
-Input : Single end library with only one fastq file
+Input : Single-end library with only one fastq file
 ____________________
 
 Output : One filtered fastq file 
@@ -34,7 +34,7 @@ ____________________
 
 ¤ Option 2)
 
-Input : Paired end library with R1 & R2 fastq files with overlap exptected
+Input : Paired-end library with R1 & R2 fastq files with overlap expected
 ____________________
              ____________________
 
@@ -46,7 +46,7 @@ _________________________________
 
 ¤ Option 3)
 
-Input : Paired end library with R1 & R2 fastq files without overlap exptected
+Input : Paired-end library with R1 & R2 fastq files without overlap expected
 ____________________
                                  ____________________
 
