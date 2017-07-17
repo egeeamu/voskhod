@@ -23,15 +23,15 @@ Voskhod Pipeline version V1.1
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
-(CC-BY-NC-ND 4.0 International license) 
+GPL-3.0
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 ¤ Option 1 :
-  You have a single end library with only one fastq file
-  This step will filter this file based on the quality and length
+  You have a single-end library with only one fastq file
+  This step will filter this file based on minimum quality and length
 
 ¤ Option 2 :
-  You have a paired end library with R1 & R2 fastq files
+  You have a paired-end library with R1 & R2 fastq files
   This step will filter the files then sync R1 and R2 into two filtered and synchronyzed fastq files
 
 The input file(s) must be in ./raw_input/assembly and in fastq format.
