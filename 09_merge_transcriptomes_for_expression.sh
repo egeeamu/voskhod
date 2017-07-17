@@ -16,7 +16,7 @@ Voskhod Pipeline version V1.1
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
-(CC-BY-NC-ND 4.0 International license) 
+GPL-3.0
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 Input must be in ./assembly/tomerge in sqlite file format.
