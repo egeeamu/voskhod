@@ -16,14 +16,13 @@ Voskhod Pipeline version V1.1
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
-(CC-BY-NC-ND 4.0 International license) 
+GPL-3.0
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 
 Input must be in ./assembly/tomerge in sqlite file format.
 Output will be in ./reference_ts in sqlite file format.
 
-Type the whished name of the validated assembly (without space ex: drer_validated), followed by [ENTER]:
 EndOfMessage
 
 echo ""
@@ -36,7 +35,7 @@ if [ "$key" = 'C' ]; then
 	echo ""
 	cp ./bin/cdna_merger.py ./assembly
 	mkdir -p ./assembly/merged/
-	echo "Type the name of the merged cdna_infos.db (without space), followed by [ENTER]:"
+	echo "Type the name of the combined cdna_infos.db (without space), followed by [ENTER]:"
 	read name
 	cd ./assembly/
 	python ./cdna_merger.py
