@@ -141,22 +141,21 @@ The script writes its output in ./assembly/raw/voskhod/.
 
 
 8- Validate and anotate the assembly (like step 4):
-When asked, select the assembly from the corresponding fastq file found at ./assembly/raw/voskhod/ The reference teanscriptome required in this step is the reference species from Ensembl to avoid circularity with the denovo inference.
+When asked, select the assembly from the corresponding fastq file found at ./assembly/raw/voskhod/ The reference species required in this step is the reference transcriptome to avoid circularity with the denovo inference.
 
 
-> ./08_voskhod_validate_assembly_.sh
+> ./08_validate_guided_assembly.sh
 
-Repeat steps 6, 7 & 8 for all your sources before continue if you need to merge transcriptomes.
+Repeat steps 6, 7 & 8 for all your sources before continuing if you need to merge transcriptomes.
 
 if you are interrested in one single transcriptome you are good to go and can explore the results with any database browser as DB Browser for SQLite (http://sqlitebrowser.org/). 
 
-9- Merge all  assemblies and reference cdna :
-Copy your validated Voskhod's assemblys (from ./assembly/validated)  and your reference cdna (from ./reference_ts) in ./assembly/tomerge
+9- To prepare for expression studies, merge all  assemblies and reference cdna :
+Copy your validated Voskhod's assemblies (from ./assembly/validated)  and your reference cdna (from ./reference_ts) in ./assembly/tomerge
 caution : put only the transcriptome(s) you want merged into ./assembly/tomerge
 
-> ./09_merge_transcriptomes.sh
+> ./09_merge_transcriptomes_for_expression.sh
 
-The assembly is done and you can explore the results with any database browser as DB Browser for SQLite (http://sqlitebrowser.org/). 
 It is usually a better idea to merge fastq files from multiples sources rather than merging the inferred transcriptomes as you get more coverage during the analyses. This although means you loose track of the source during the process. Merging transcriptomes in a single database allows identifying the transcript source.
 
 #RNAseq Expression
