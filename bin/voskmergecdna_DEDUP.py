@@ -16,7 +16,7 @@ import hashlib
 # import matplotlib.mlab as mlab
 # import matplotlib.pyplot as plts_SsD'
 listfiles = os.popen("""find ./tomerge/ -maxdepth 1 -type f """).read().split("\n")[0:-1]
-print listfiles
+#print listfiles
 
 conn = sqlite3.connect(':memory:')
 c = conn.cursor()
@@ -90,7 +90,7 @@ for i in listfiles:
         #print match
         match = c2.fetchone()
     conn.commit()
-    print i
+    #print i
 
 
 c.execute("""SELECT * FROM result ORDER BY species,gene_name,transcript_size""")
