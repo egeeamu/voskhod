@@ -16,7 +16,7 @@ Voskhod Pipeline version V1.1
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
-(CC-BY-NC-ND 4.0 International license) 
+GPL-3.0
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 Input must be in ./assembly/raw in fasta file format.
@@ -31,7 +31,7 @@ echo ""
 echo ""
 echo ""
 
-prompt="Please select Reference species:"
+prompt="Please select a Reference species:"
 options=( $(find ./reference_ts -maxdepth 1 -type f -iregex '.*\.\(db\|db\)$' -print0 | xargs -0) )
 
 PS3="$prompt "
