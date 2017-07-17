@@ -50,26 +50,26 @@ Once this step is done you are ready to use Voskhod!
 
 #Transcriptome assembly
 
-1- Download and format the reference transcriptome.
-
+1- Download and format the reference transcriptome (one at a time).
+The script uses uncompressed fasta files from voskhod/fail_safe/ folder.  
 This script transforms a fasta file (preferably downloaded from Ensembl as it provides metadata)
 
-If you are working with ensembl (may work with plan,metazoa,etc..) dataset :
+If you are working with ensembl (may work with plan,metazoa,etc..) dataset : 
 Get coding rna :
 xx.xx.xx.cdna.all.fa.gz from for the species of your choice from :
 ftp://ftp.ensembl.org/pub/current_fasta/
 for example : ftp://ftp.ensembl.org/pub/current_fasta/danio_rerio/cdna/Danio_rerio.GRCz10.cdna.all.fa.gz
 
-Get non-coding rna :
+if you like you can also get the corresponding non-coding rna :
 and  xx.xx.xx.ncrna.fa.gz for the species of your choice from :
 ftp://ftp.ensembl.org/pub/current_fasta/
 for example ftp://ftp.ensembl.org/pub/current_fasta/danio_rerio/ncrna/Danio_rerio.GRCz10.ncrna.fa.gz
 
-Unpack your reference fasta file in "failsafe_input" within the voskhod folder. For example
+If compressed, unpack your reference fasta file(s) in "failsafe_input" within the voskhod folder. For example
 > gzip -d Danio_rerio.GRCz10.cdna.all.fa.gz and put this in "failsafe_input"
 
 Run the conversion script that converts the reference fasta into a SQlite database
-> python 01b_failsafe_cdna_formater_from_fasta.py
+> python 01b_failsafe_cdna_formater_from_fasta.py -s SpeciesName
 
 If you are working with custom data-set, make sure your fasta is formated like this :
 
