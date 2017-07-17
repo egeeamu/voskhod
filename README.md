@@ -74,11 +74,9 @@ Run the conversion script that converts the reference fasta into a SQlite databa
 If you are working with custom data-set, make sure your fasta is formated like this :
 
 >transcriptname_1
-
 sequence
 
 >transcriptname_2
-
 sequence
 
 without space or special character in names, then put it in "failsafe_input".
@@ -93,10 +91,10 @@ The input files must be in ./raw_input/assembly
 
 > ./02_filtering_raw_data_denovo.sh
 
-this will generate output files filtered for quality in ./cleaned_input/assembly/ (synchronized R1 and R2 files when Paired-End sequencing is selected)
+this will generate output files filtered for quality in ./cleaned_input/assembly/ (synchronized R1 and R2 files when Paired-End sequencing is selected). If you already cleaned (and paired for PE-reads) your reads you can directly imort your reads to the cleaned_input/assembly folder of course. 
 
-3- Launch Denovo Trinity assembly (selecting the correct value when requested):
--Cores to use : the number of core on your computer available for the analysis
+3- Launch Denovo assembly (selecting the correct value when requested):
+-Cores to use : the number of cores on your computer available for the analysis
 -Ram to use : total ram on your computer minus 2Gb (ex 16Gb - 2 > 14Gb)
 
 > ./03_denovo_assembly.sh
@@ -105,15 +103,15 @@ this will generate output files ./assembly/raw/trinity/
 
 4- Validate and annotate the assembly:
 
-The assembly to validate must be in ./assembly/raw/trinity/ in fastq format. The validated and annotated assembly will be written in ./assembly/validated in sqlite format.
+The assembly to validate must be in ./assembly/raw/trinity/ in fasta format. The validated and annotated assembly will be written in ./assembly/validated in sqlite format.
 
 > ./04_validate_annotate_assembly.sh
 
-If you have multiple sources for transcriptomes, repeat steps 2 , 3 & 4 for all your sources before continue.
+If you have multiple sources for transcriptomes, repeat steps 2 , 3 & 4 for all your sources before continuing.
 If you only want denovo assemblies, you are good to go and can explore the results with any database browser as DB Browser for SQLite (http://sqlitebrowser.org/). 
 
 5- Merging transcriptomes for further combined approach
-If you want to use the combined Denovo + DGM approach as described in the paper, you have to merge the reconstructed denovo transcriptome(s) with the reference species before running the DGM step on the combined refrence.
+If you want to use the combined approach implemented in Voskohd as described in the paper, you have to merge the reconstructed denovo transcriptome(s) with the reference species before running the transcriptome-guided step on the combined refrence.
 To merge  denovo assembly(ies) and reference transcriptome :
 
 Copy your validated denovo assembly(ies) (from ./assembly/validated) and your reference trascriptome (from ./reference_ts) in ./assembly/tomerge
