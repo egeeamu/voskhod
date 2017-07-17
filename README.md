@@ -61,7 +61,7 @@ ftp://ftp.ensembl.org/pub/current_fasta/
 for example : ftp://ftp.ensembl.org/pub/current_fasta/danio_rerio/cdna/Danio_rerio.GRCz10.cdna.all.fa.gz
 
 Get non-coding rna :
-and  xx.xx.xx.ncrna.fa.gz for the species of yur choice from :
+and  xx.xx.xx.ncrna.fa.gz for the species of your choice from :
 ftp://ftp.ensembl.org/pub/current_fasta/
 for example ftp://ftp.ensembl.org/pub/current_fasta/danio_rerio/ncrna/Danio_rerio.GRCz10.ncrna.fa.gz
 
