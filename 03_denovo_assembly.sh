@@ -23,21 +23,21 @@ Arnaud Ungaro contact@arnaud-ungaro.fr
 If you have an unstranded library :
 
 > Choose Option 1 if:
-  You have a single end unstranded library with only one fastq file
+  You have a single-end unstranded library with only one fastq file
   This step will launch Trinity with relevant parameters for single input file and an unstranded library.
 
 > Choose Option 2 if:
-  You have a paired end unstranded library with R1 & R2 fastq files
+  You have a paired-end unstranded library with R1 & R2 fastq files
   This step will launch Trinity with relevant parameters for input files and an unstranded library.
   
 If you have a stranded library :
 
 > Choose Option 3 if:
-  You have a single end stranded library with only one fastq file
+  You have a single-end stranded library with only one fastq file
   This step will launch Trinity with relevant parameters for a single input file and a stranded library.
 
 > Choose Option 4 if:
-  You have a paired end stranded library with R1 & R2 fastq files
+  You have a paired-end stranded library with R1 & R2 fastq files
   This step will launch Trinity with relevant parameters for input files and a stranded library.
 
 
@@ -183,7 +183,7 @@ select R1 in "${options[@]}" "Quit" ; do
         exit
 
     elif (( REPLY > 0 && REPLY <= ${#options[@]} )) ; then
-        echo  "You picked $opt which is file $REPLY"
+        echo  ""
         break
 
     else
@@ -203,7 +203,7 @@ select R2 in "${options[@]}" "Quit" ; do
         exit
 
     elif (( REPLY > 0 && REPLY <= ${#options[@]} )) ; then
-        echo  "You picked $opt which is file $REPLY"
+        echo  ""
         break
 
     else
