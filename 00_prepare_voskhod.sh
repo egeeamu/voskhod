@@ -90,7 +90,7 @@ gzip cap3.linux.x86_64.tar
 #wget -O ./pear-0.9.10-bin-64.tar.gz "http://sco.h-its.org/exelixis/web/software/pear/files/pear-0.9.10-bin-64.tar.gz"
 
 tar xvf ./pear-0.9.10-bin-64.tar.gz
-rm -rfv ./pear-0.9.10-bin-64.tar.gz
+#rm -rfv ./pear-0.9.10-bin-64.tar.gz
 mv ./pear-0.9.10-bin-64 ./pear
 mv ./pear/pear-0.9.10-bin-64 ./pear/pear 
 chmod +x ./pear/pear
