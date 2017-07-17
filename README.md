@@ -69,19 +69,22 @@ If compressed, unpack your reference fasta file(s) in "failsafe_input" within th
 > gzip -d Danio_rerio.GRCz10.cdna.all.fa.gz and put this in "failsafe_input"
 
 Run the conversion script that converts the reference fasta into a SQlite database
-> python 01b_failsafe_cdna_formater_from_fasta.py -s SpeciesName
+> python 01_cdna_formater_from_fasta.py -s SpeciesName
 
 If you are working with custom data-set, make sure your fasta is formated like this :
 
 >transcriptname_1
+
 sequence
+
 >transcriptname_2
+
 sequence
 
 without space or special character in names, then put it in "failsafe_input".
 
 Run the conversion script that converts the reference fasta into a SQlite database and precise the Species name
-> python 01b_failsafe_cdna_formater_from_fasta.py -s SpeciesName
+> python 01_cdna_formater_from_fasta.py -s SpeciesName
 
 2- Filter raw input data (uncompressed fastq files) before denovo assembly.
 If you have multiple R1 and R2 files, concatenate them into one "large" R1 & one "large" R2.  (e.g. cat *R1* > largeR1.fastq) unless you need to keep track of the source for further analyses.
