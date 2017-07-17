@@ -17,12 +17,12 @@ Voskhod Pipeline version V1.1
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
-(CC-BY-NC-ND 4.0 International license) 
+GPL-3.0
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 ¤ Option 1)
 
-Input : Single end library with only one fastq file by experiment
+Input : Single-end library with only one fastq file by experiment
 ____________________
 
 Output : One filtered fastq file 
@@ -33,7 +33,7 @@ ____________________
 
 ¤ Option 2)
 
-Input : Paired end library with R1 & R2 fastq files with overlap exptected by experiment
+Input : Paired-end library with R1 & R2 fastq files with overlap expected by experiment
 ____________________
              ____________________
 
@@ -45,7 +45,7 @@ _________________________________
 
 ¤ Option 3)
 
-Input : Paired end library with R1 & R2 fastq files without overlap exptected by experiment
+Input : Paired end library with R1 & R2 fastq files without overlap expected by experiment
 ____________________
                                  ____________________
 
