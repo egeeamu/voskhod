@@ -1,4 +1,4 @@
-Voskhod Pipeline version V1.1
+Voskhod Pipeline version V1.2
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 

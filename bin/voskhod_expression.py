@@ -68,12 +68,12 @@ print """
 
 ¤ Automatic Blast / Reads tagger
 
-Version 20170331
-Voskhod Pipeline version V1.1
+Version 20170721
+Voskhod Pipeline version V1.2
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
-(CC-BY-NC-ND 4.0 International license) 
+(GPL-3.0) 
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 """

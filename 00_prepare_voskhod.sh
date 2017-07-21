@@ -14,12 +14,12 @@ cat << EndOfMessage
 
 ¤ Preloader and downloader
 
-Version 20170331
-Voskhod Pipeline version V1.1
+Version 20170721
+Voskhod Pipeline version V1.2
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
-(CC-BY-NC-ND 4.0 International license) 
+(GPL-3.0) 
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 This script will download and unpack: Spades 3.10.1 ,Blast+ 2.6.0, Pear 0.9.10, Trinity v2.2.0 & compile Trinity

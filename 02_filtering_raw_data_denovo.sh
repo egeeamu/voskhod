@@ -18,8 +18,8 @@ cat << EndOfMessage
 
 ¤ Denovo input Cleaner
 
-Version 20170331
-Voskhod Pipeline version V1.1
+Version 20170721
+Voskhod Pipeline version V1.2
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
