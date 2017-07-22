@@ -32,8 +32,11 @@ If using a fresh Ubuntu install, you will have to install dependencies and linux
 > apt-get install oracle-java8-installer (accept terms)
 
 > pip install bashplotlib
+> pip install mygene
 
-and finally get Voskhod (as non-root user)!
+(If you don't have admin privileges you can install python packages locally with followed command: "pip install --user package_name")
+
+And finally get Voskhod (as non-root user)!
 
 > git clone https://github.com/egeeamu/voskhod
 
