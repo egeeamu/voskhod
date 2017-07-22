@@ -57,7 +57,7 @@ mkdir -p ./raw_input/expression
 mkdir -p ./raw_input/assembly
 mkdir -p ./assembly/
 mkdir -p ./assembly/tomerge
-mkdir -p ./failsafe_input
+mkdir -p ./fasta_ref_input
 
 cd ./bin/
 rm -rfv ./bin/trinityrnaseq-2.2.0

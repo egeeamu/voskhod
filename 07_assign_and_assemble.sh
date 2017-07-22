@@ -20,7 +20,7 @@ GPL-3.0
 Arnaud Ungaro contact@arnaud-ungaro.fr
 
 Input must be in ./cleaned_input/assembly
-Output will be in ./assembly/raw/voskhod
+Output will be in ./assembly/raw/guided
 
 Type the name for the assembled species (without space ex: drer_vosk), followed by [ENTER]:
 EndOfMessage
@@ -71,7 +71,7 @@ echo ""
 
 mkdir -p ./logs
 rm -rfv ./voskhod_part_assembly_"$name"
-mkdir -p ./assembly/raw/voshod/
+mkdir -p ./assembly/raw/guided/
 mkdir -p ./voskhod_part_assembly_"$name"
 mkdir -p ./voskhod_part_assembly_"$name"/ident_reads
 mkdir -p ./voskhod_part_assembly_"$name"/ident_reads/data_input
@@ -145,8 +145,8 @@ python voskmergecdna_DEDUP.py
 rm ./tomerge/table_data_"$name".fastq.db_HITS.db_cdna_infos.db
 python Spektr_CNI_to_Fasta.py ./tomerge/merged.db
 python convert_fasta_to_fastq.py ./export.fasta export.fastq
-mv ./export.fastq ../../assembly/raw/voshod/"$name"_Voskhod.fastq
-mv ./export.fasta ../../assembly/raw/voshod/"$name"_Voskhod.fasta
+mv ./export.fastq ../../assembly/raw/guided/"$name"_Voskhod.fastq
+mv ./export.fasta ../../assembly/raw/guided/"$name"_Voskhod.fasta
 
 #mv ./data_input/table_data_"$name".fastq.db_HITS.db_cdna_infos.db ../../assembly/raw/"$name"_Voskhod.db
 

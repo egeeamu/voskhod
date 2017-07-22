@@ -58,7 +58,7 @@ If you use another sequencing method, modify this option in the script, or if un
 
 
 The input file(s) must be in ./cleaned_input/assembly and in fastq format.
-The assembly files will be in ./assembly/raw/trinity
+The assembly files will be in ./assembly/raw/denovo
 
 EndOfMessage
 
@@ -138,7 +138,7 @@ echo ""
 mkdir -p ./logs
 rm -rfv trinity_part_"$name"
 mkdir -p trinity_part_"$name"
-mkdir -p assembly/raw/trinity
+mkdir -p assembly/raw/denovo
 cd ./trinity_part_"$name"
 ../bin/trinityrnaseq/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
 #../bin/trinityrnaseq/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
@@ -151,9 +151,9 @@ cd trinity_out_dir
 cp ../../bin/convert_fasta_to_fastq.py ./
 mv Trinity.fasta "$name"_Trinity.fasta
 python convert_fasta_to_fastq.py ./"$name"_Trinity.fasta "$name"_Trinity.fastq
-rm -rfv ../../assembly/raw/trinity/"$name"_Trinity.fasta
-rm -rfv ../../assembly/raw/trinity/"$name"_Trinity.fastq
-mv -v "$name"_Trinity.* ../../assembly/raw/trinity/
+rm -rfv ../../assembly/raw/denovo/"$name"_Trinity.fasta
+rm -rfv ../../assembly/raw/denovo/"$name"_Trinity.fastq
+mv -v "$name"_Trinity.* ../../assembly/raw/denovo/
 
 fi
 
@@ -217,7 +217,7 @@ echo ""
 mkdir -p ./logs
 rm -rfv trinity_part_"$name"
 mkdir -p trinity_part_"$name"
-mkdir -p assembly/raw/trinity
+mkdir -p assembly/raw/denovo
 cd ./trinity_part_"$name"
 ../bin/trinityrnaseq/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
 #nice -n "$nicevalue" ../bin/trinityrnaseq/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
@@ -230,9 +230,9 @@ cd trinity_out_dir
 cp ../../bin/convert_fasta_to_fastq.py ./
 mv Trinity.fasta "$name"_Trinity.fasta
 python convert_fasta_to_fastq.py ./"$name"_Trinity.fasta "$name"_Trinity.fastq
-rm -rfv ../../assembly/raw/trinity/"$name"_Trinity.fasta
-rm -rfv ../../assembly/raw/trinity/"$name"_Trinity.fastq
-mv -v "$name"_Trinity.* ../../assembly/raw/trinity/
+rm -rfv ../../assembly/raw/denovo/"$name"_Trinity.fasta
+rm -rfv ../../assembly/raw/denovo/"$name"_Trinity.fastq
+mv -v "$name"_Trinity.* ../../assembly/raw/denovo/
 
 fi
 
@@ -277,7 +277,7 @@ echo ""
 mkdir -p ./logs
 rm -rfv trinity_part_"$name"
 mkdir -p trinity_part_"$name"
-mkdir -p assembly/raw/trinity
+mkdir -p assembly/raw/denovo
 cd ./trinity_part_"$name"
 ../bin/trinityrnaseq/Trinity --seqType fq --single ."$R1" --SS_lib_type R --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
 #../bin/trinityrnaseq/Trinity --seqType fq --single ."$R1" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
@@ -290,9 +290,9 @@ cd trinity_out_dir
 cp ../../bin/convert_fasta_to_fastq.py ./
 mv Trinity.fasta "$name"_Trinity.fasta
 python convert_fasta_to_fastq.py ./"$name"_Trinity.fasta "$name"_Trinity.fastq
-rm -rfv ../../assembly/raw/trinity/"$name"_Trinity.fasta
-rm -rfv ../../assembly/raw/trinity/"$name"_Trinity.fastq
-mv -v "$name"_Trinity.* ../../assembly/raw/trinity/
+rm -rfv ../../assembly/raw/denovo/"$name"_Trinity.fasta
+rm -rfv ../../assembly/raw/denovo/"$name"_Trinity.fastq
+mv -v "$name"_Trinity.* ../../assembly/raw/denovo/
 
 fi
 
@@ -356,7 +356,7 @@ echo ""
 mkdir -p ./logs
 rm -rfv trinity_part_"$name"
 mkdir -p trinity_part_"$name"
-mkdir -p assembly/raw/trinity
+mkdir -p assembly/raw/denovo
 cd ./trinity_part_"$name"
 ../bin/trinityrnaseq/Trinity --seqType fq --left ."$R1" --right ."$R2" --SS_lib_type RF --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
 #nice -n "$nicevalue" ../bin/trinityrnaseq/Trinity --seqType fq --left ."$R1" --right ."$R2" --normalize_reads --CPU "$cores" --max_memory "$maxram"G | tee ../logs/logs_trinity_R1_R2.txt
@@ -369,8 +369,8 @@ cd trinity_out_dir
 cp ../../bin/convert_fasta_to_fastq.py ./
 mv Trinity.fasta "$name"_Trinity.fasta
 python convert_fasta_to_fastq.py ./"$name"_Trinity.fasta "$name"_Trinity.fastq
-rm -rfv ../../assembly/raw/trinity/"$name"_Trinity.fasta
-rm -rfv ../../assembly/raw/trinity/"$name"_Trinity.fastq
-mv -v "$name"_Trinity.* ../../assembly/raw/trinity/
+rm -rfv ../../assembly/raw/denovo/"$name"_Trinity.fasta
+rm -rfv ../../assembly/raw/denovo/"$name"_Trinity.fastq
+mv -v "$name"_Trinity.* ../../assembly/raw/denovo/
 
 fi

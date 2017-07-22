@@ -81,6 +81,8 @@ cp ./bin/voskhod_validate_assembly.py ./voskhod_part"$name"_validate/validate_as
 cp ./bin/voskload_preload_database_validate_contigs.py ./voskhod_part"$name"_validate/validate_assembly/
 cp ./bin/Molnia_TD_to_CNI_PlusINFOS_Mth_assembly_annotation.py ./voskhod_part"$name"_validate/validate_assembly/
 cp ./bin/voskmergecdna_DEDUP.py ./voskhod_part"$name"_validate/validate_assembly/
+cp ./bin/Spektr_CNI_to_Fasta.py ./voskhod_part"$name"_validate/validate_assembly/
+cp ./bin/convert_fasta_to_fastq.py ./voskhod_part"$name"_validate/validate_assembly/
 
 
 cd ./voskhod_part"$name"_validate/validate_assembly/data_input/

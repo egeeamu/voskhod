@@ -65,8 +65,8 @@ and  xx.xx.xx.ncrna.fa.gz for the species of your choice from :
 ftp://ftp.ensembl.org/pub/current_fasta/
 for example ftp://ftp.ensembl.org/pub/current_fasta/danio_rerio/ncrna/Danio_rerio.GRCz10.ncrna.fa.gz
 
-If compressed, unpack your reference fasta file(s) in "failsafe_input" within the voskhod folder. For example
-> gzip -d Danio_rerio.GRCz10.cdna.all.fa.gz and put this in "failsafe_input"
+If compressed, unpack your reference fasta file(s) in "fasta_ref_input" within the voskhod folder. For example
+> gzip -d Danio_rerio.GRCz10.cdna.all.fa.gz and put this in "fasta_ref_input"
 
 Run the conversion script that converts the reference fasta into a SQlite database
 > python 01_cdna_formater_from_fasta.py -s SpeciesName
@@ -79,7 +79,7 @@ sequence
 >transcriptname_2
 sequence
 
-without space or special character in names, then put it in "failsafe_input".
+without space or special character in names, then put it in "fasta_ref_input".
 
 Run the conversion script that converts the reference fasta into a SQlite database and precise the Species name
 > python 01_cdna_formater_from_fasta.py -s SpeciesName
@@ -99,11 +99,11 @@ this will generate output files filtered for quality in ./cleaned_input/assembly
 
 > ./03_denovo_assembly.sh
 
-this will generate output files ./assembly/raw/trinity/
+this will generate output files ./assembly/raw/denovo/
 
 4- Validate and annotate the assembly:
 
-The assembly to validate must be in ./assembly/raw/trinity/ in fasta format. The validated and annotated assembly will be written in ./assembly/validated in sqlite format.
+The assembly to validate must be in ./assembly/raw/denovo/ in fasta format. The validated and annotated assembly will be written in ./assembly/validated in sqlite format.
 
 > ./04_validate_annotate_assembly.sh
 
@@ -137,11 +137,11 @@ When requested, select your merged transcriptomes (all species + ref), and the f
 
 > ./07_assign_and_assemble.sh
 
-The script writes its output in ./assembly/raw/voskhod/. 
+The script writes its output in ./assembly/raw/guided/. 
 
 
 8- Validate and anotate the assembly (like step 4):
-When asked, select the assembly from the corresponding fastq file found at ./assembly/raw/voskhod/ The reference species required in this step is the reference transcriptome to avoid circularity with the denovo inference.
+When asked, select the assembly from the corresponding fastq file found at ./assembly/raw/guided/ The reference species required in this step is the reference transcriptome to avoid circularity with the denovo inference.
 
 
 > ./08_validate_guided_assembly.sh
