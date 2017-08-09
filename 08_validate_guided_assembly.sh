@@ -11,8 +11,8 @@ cat << EndOfMessage
 
 ¤ Voskhod assembly validator
 
-Version 20170721
-Voskhod Pipeline version V1.2
+Version 20170809
+Voskhod Pipeline version V1.2.1
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
 
@@ -83,6 +83,9 @@ cp ./bin/Molnia_TD_to_CNI_PlusINFOS_Mth_assembly_annotation.py ./voskhod_part"$n
 cp ./bin/voskmergecdna_DEDUP.py ./voskhod_part"$name"_validate/validate_assembly/
 cp ./bin/Spektr_CNI_to_Fasta.py ./voskhod_part"$name"_validate/validate_assembly/
 cp ./bin/convert_fasta_to_fastq.py ./voskhod_part"$name"_validate/validate_assembly/
+cp ./bin/Demeter_Biggest_Noise.py ./voskhod_part"$name"_validate/validate_assembly/
+
+
 
 
 cd ./voskhod_part"$name"_validate/validate_assembly/data_input/
@@ -98,11 +101,38 @@ mv  ./logs/* ../../logs
 python Molnia_TD_to_CNI_PlusINFOS_Mth_assembly_annotation.py ./results/table_data_"$name".fastq.db "$name"
 mv  *.txt ../../logs
 mv cdna_infos_"$name"*.db ./tomerge
+
+#deduplication
 python voskmergecdna_DEDUP.py
 rm ./tomerge/cdna_infos_"$name"*.db
+
+#convert sqlite to fasta & fastq
+python Spektr_CNI_to_Fasta.py ./tomerge/merged.db
+python convert_fasta_to_fastq.py ./export.fasta export.fastq
+mv ./export.fastq ../../assembly/validated/"$name"_validated_guided.fastq
+mv ./export.fasta ../../assembly/validated/"$name"_validated_guided.fasta
+
+
 rm -rf ../../assembly/validated/"$name"_validated.db
-mv ./tomerge/merged.db ../../assembly/validated/"$name"_validated.db
+cp ./tomerge/merged.db ../../assembly/validated/"$name"_validated_guided.db
+mv ./tomerge ./tomergededup
+mkdir -p ./tomerge
+mv ./tomergededup/merged.db ./tomerge/tofindbiggest.db
+
+rm -rfv ./export.fastq
+rm -rfv ./export.fasta
+
+# biggest contig by genes
+python Demeter_Biggest_Noise.py
+cp ./tomerge/merged.db ../../assembly/validated/"$name"_validated_guided_biggest_contig_by_gene.db
+
+python Spektr_CNI_to_Fasta.py ./tomerge/merged.db
+python convert_fasta_to_fastq.py ./export.fasta export.fastq
+
+mv -f ./export.fastq ../../assembly/validated/"$name"_validated_guided_biggest_contig_by_gene.fastq
+mv -f ./export.fasta ../../assembly/validated/"$name"_validated_guided_biggest_contig_by_gene.fasta
+
+
+
 exit
 #mv  cdna_infos_"$name"*.db ../../assembly/validated
-
-
