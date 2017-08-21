@@ -176,5 +176,6 @@ When requested, select the relevant reference transcriptome (usually the transcr
 
 > ./e02_expression_analysis.sh
 
+
 The output will be in ./expression_results/STUDYNAME/  in csv and sqlite format.
 (with STUDYNAME being the name of the study file)
