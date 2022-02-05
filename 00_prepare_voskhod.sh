@@ -69,17 +69,11 @@ mkdir -p ./fasta_ref_input
 cd ./bin/
 rm -rfv ./bin/trinityrnaseq-2.2.0
 
-#rm -rfv ./SPAdes-3.6.2-Linux.tar.gz
-#wget -O ./SPAdes-3.6.2-Linux.tar.gz "http://spades.bioinf.spbau.ru/release3.6.2/SPAdes-3.6.2-Linux.tar.gz"
-#rm -rfv ./SPAdes-3.10.1-Linux.tar.gz
-#wget -O ./SPAdes-3.10.1-Linux.tar.gz "http://spades.bioinf.spbau.ru/release3.10.1/SPAdes-3.10.1-Linux.tar.gz"
-
-
 
 rm -rfv ./SPAdes-3.10.1-Linux.tar.gz
 rm -rfv ./SPAdes-3.10.1-Linux
 #wget -O ./SPAdes-3.10.1-Linux.tar.gz "http://spades.bioinf.spbau.ru/release3.10.1/SPAdes-3.10.1-Linux.tar.gz"
-wget -O ./SPAdes-3.10.1-Linux.tar.gz "http://spades.bioinf.spbau.ru/release3.10.1/SPAdes-3.10.1-Linux.tar.gz"
+wget -O ./SPAdes-3.10.1-Linux.tar.gz "https://arnaud-ungaro.fr/voskhod/redist/lib/SPAdes-3.10.1-Linux.tar.gz"
 tar xvf SPAdes-3.10.1-Linux.tar.gz
 rm -rfv ./SPAdes-3.10.1-Linux.tar.gz
 mv ./SPAdes-3.10.1-Linux SPAdes
