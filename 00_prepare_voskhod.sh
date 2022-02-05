@@ -71,6 +71,7 @@ rm -rfv ./bin/trinityrnaseq-2.2.0
 
 rm -rfv ./SPAdes-3.10.1-Linux.tar.gz
 rm -rfv ./SPAdes-3.10.1-Linux
+#wget -O ./SPAdes-3.10.1-Linux.tar.gz "http://spades.bioinf.spbau.ru/release3.10.1/SPAdes-3.10.1-Linux.tar.gz"
 wget -O ./SPAdes-3.10.1-Linux.tar.gz "http://spades.bioinf.spbau.ru/release3.10.1/SPAdes-3.10.1-Linux.tar.gz"
 tar xvf SPAdes-3.10.1-Linux.tar.gz
 rm -rfv ./SPAdes-3.10.1-Linux.tar.gz
@@ -81,7 +82,8 @@ rm -rfv ./SPAdes
 
 rm -rfv cap3.linux.x86_64.tar
 rm -rfv cap3.linux.x86_64.tar.gz
-wget -O ./cap3.linux.x86_64.tar "http://seq.cs.iastate.edu/CAP3/cap3.linux.x86_64.tar"
+#wget -O ./cap3.linux.x86_64.tar "http://seq.cs.iastate.edu/CAP3/cap3.linux.x86_64.tar"
+wget -O ./cap3.linux.x86_64.tar "https://arnaud-ungaro.fr/voskhod/redist/lib/cap3.linux.x86_64.tar"
 gzip cap3.linux.x86_64.tar
 
 
@@ -96,7 +98,8 @@ mv ./pear/pear-0.9.10-bin-64 ./pear/pear
 chmod +x ./pear/pear
 
 rm -rfv ./trinity_v2.2.0.tar.gz
-wget -O ./trinity_v2.2.0.tar.gz "https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.2.0.tar.gz"
+#wget -O ./trinity_v2.2.0.tar.gz "https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.2.0.tar.gz"
+wget -O ./trinity_v2.2.0.tar.gz "https://arnaud-ungaro.fr/voskhod/redist/lib/trinityrnaseq-2.2.0.tar.gz"
 tar xvf ./trinity_v2.2.0.tar.gz
 mv trinityrnaseq-2.2.0 trinityrnaseq
 
@@ -105,7 +108,8 @@ mv trinityrnaseq-2.2.0 trinityrnaseq
 #tar xvf ./ncbi-blast-2.4.0+-x64-linux.tar.gz 
 rm -rfv ./ncbi-blast
 rm -rfv ./ncbi-blast-2.6.0+-x64-linux.tar.gz
-wget -O ./ncbi-blast-2.6.0+-x64-linux.tar.gz "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.6.0/ncbi-blast-2.6.0+-x64-linux.tar.gz"
+#wget -O ./ncbi-blast-2.6.0+-x64-linux.tar.gz "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.6.0/ncbi-blast-2.6.0+-x64-linux.tar.gz"
+wget -O ./ncbi-blast-2.6.0+-x64-linux.tar.gz "https://arnaud-ungaro.fr/voskhod/redist/lib/ncbi-blast-2.6.0+-x64-linux.tar.gz"
 tar xvf ./ncbi-blast-2.6.0+-x64-linux.tar.gz
 rm -rfv ./ncbi-blast-2.6.0+-x64-linux.tar.gz
 mv ./ncbi-blast-2.6.0+ ./ncbi-blast                                      
