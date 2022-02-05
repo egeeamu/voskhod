@@ -14,7 +14,7 @@ cat << EndOfMessage
 
 ¤ Preloader and downloader
 
-Version 20170721
+Version 20220205
 Voskhod Pipeline version V1.2
 Part of the Voskhod project
 https://github.com/egeeamu/voskhod
@@ -33,10 +33,17 @@ java jre (at least 8) and install the following python packages : biomart (v0.5.
 If not :
 
 aptitude install build-essential git python-pip pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3 software-properties-common
+
+For java : 
 add-apt-repository ppa:webupd8team/java
 aptitude update
 aptitude install oracle-java8-installer
 aptitude install oracle-java8-set-default
+
+or :
+apt install openjdk-8-jre
+
+
 pip install -Iv http://arnaud-ungaro.fr/voskhod/redist/lib/biomart-0.5.0.tar.gz
 pip install bashplotlib
 
