@@ -120,7 +120,7 @@ mv ./ncbi-blast-2.6.0+ ./ncbi-blast
 
 
 cd trinityrnaseq
-make -j 8 | tee ../../logs/logs_compil_trinity.txt
+make -j$(nproc) | tee ../../logs/logs_compil_trinity.txt
 
 
 else
