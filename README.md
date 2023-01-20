@@ -23,13 +23,7 @@ It surely works on other flavours of Linux OS but we will not be able to provide
 
 If using a fresh Ubuntu install, you will have to install dependencies and linux packages with administrator privileges :
 
-> apt-get install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3 software-properties-common
-
-> add-apt-repository ppa:webupd8team/java (validate with pressing Enter)
-
-> apt-get update
-
-> apt-get install oracle-java8-installer (accept terms)
+> apt-get install build-essential git python-pip  pbzip2 pigz zlib1g-dev libncurses5-dev bowtie parallel python-biopython sqlite3 software-properties-common openjdk-8-jre
 
 > pip install bashplotlib
 
