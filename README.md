@@ -18,7 +18,7 @@ http://www.biorxiv.org/content/early/2016/10/28/084145
 
 #Installation
 
-Voskhod has being extensively tested (in particular with paired end data) on Xubuntu 16.04 LTS and all instructions refer to this setup.
+Voskhod has being extensively tested (in particular with paired end data) on Ubuntu 16.04 LTS and all instructions refer to this setup.
 It surely works on other flavours of Linux OS but we will not be able to provide technical support on this kind of questions.
 
 If using a fresh Ubuntu install, you will have to install dependencies and linux packages with administrator privileges :
