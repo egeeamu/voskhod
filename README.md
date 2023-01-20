@@ -27,7 +27,7 @@ If using a fresh Ubuntu install, you will have to install dependencies and linux
 
 > pip install bashplotlib
 
-> pip install mygene
+> pip install mygene requests==2.27
 
 (If you don't have admin privileges you can install python packages locally with followed command: "pip install --user package_name")
 
